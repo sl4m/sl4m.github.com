@@ -47,6 +47,7 @@ Successfully installed i18n-0.3.3
 16 gems installed
 {% endhighlight %}
 
+
 {% highlight text %}
 C:\Users\skim>gem install rails --pre --no-ri --no-rdoc
 Successfully installed activesupport-3.0.0.beta
