@@ -1,4 +1,4 @@
-.highlight  { background-color: #F0F0F0; overflow: auto; padding: 0 5px; font-family: Consolas, Monaco, fixed; }
+.highlight  { background-color: #D5D5D5; overflow: auto; padding: 0 5px; font-family: Consolas, Monaco, fixed; font-size: 12}
 .highlight .c { color: #999999; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .g { color: #d0d0d0 } /* Generic */
