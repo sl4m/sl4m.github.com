@@ -1,6 +1,6 @@
 body{
   background: #FAF9F8;
-  font-family: 'Myriad Pro', helvetica, arial, sans-serif;
+  font-family: helvetica, arial, sans-serif;
   font-size: 18px;
   margin: 0;
 }
@@ -8,7 +8,7 @@ a{
   color: #3B3A40;
 }
 a:hover{
-  color: #A5A5A5;
+  color: #3B3A40;
   text-decoration: none;
 }
 p code{
@@ -30,7 +30,7 @@ p code{
   color:#A5A5A5;
 }
 h1,h2,h3,h4{
-  font-family: 'Myriad Pro';
+  font-family: helvetica, arial, sans-serif;
   font-weight: normal;
 }
 h1 a, h2 a, h3 a, h4 a{
