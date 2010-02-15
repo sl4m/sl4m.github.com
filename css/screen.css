@@ -1,6 +1,6 @@
 body{
   background: #FAF9F8;
-  font-family: "ff-enzo-web";
+  font-family: "ff-enzo-web-1", "ff-enzo-web-2";
   font-size: 18px;
   margin: 0;
 }
@@ -30,7 +30,7 @@ p code{
   color:#A5A5A5;
 }
 h1,h2,h3,h4{
-  font-family: "ff-enzo-web";
+  font-family: "ff-enzo-web-1", "ff-enzo-web-2";
   font-weight: normal;
 }
 h1 a, h2 a, h3 a, h4 a{
