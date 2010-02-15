@@ -14,7 +14,7 @@ This is a quick patch created by [Jon](http://github.com/jonforums) at [RubyInst
 
 *What You Need*
 
-* RubyInstaller [1.8.7 RC2](http://rubyforge.org/frs/download.php/69034/rubyinstaller-1.8.7-p249-rc2.exe) or [1.9.1 RC2](http://rubyforge.org/frs/download.php/69035/rubyinstaller-1.9.1-p378-rc2.exe) (Jon will soon test out Ruby 1.8.6 mswin and on Ubuntu)
+* Any [RubyInstaller MinGW version](http://rubyinstaller.org/download.html) or [1.8.7/1.9.1 mswin32](http://www.ruby-lang.org/en/downloads/) (Not tested on One-Click Installer and Jon will soon test on Ubuntu)
 * [jekyll gem](http://gemcutter.org/gems/jekyll)
 * [Python](http://www.python.org/download/) 2.3 or higher (I used 2.6.4)
 * [setuptools 0.6c11](http://pypi.python.org/pypi/setuptools) for easy_install
@@ -22,7 +22,7 @@ This is a quick patch created by [Jon](http://github.com/jonforums) at [RubyInst
 
 *Installation*
 
-Installing RubyInstaller, jekyll, and Python should be self explanatory.  I installed Ruby 1.8.7 to C:\Ruby187\ and Python 2.6.4 to C:\Python26\\. 
+Installing Ruby, jekyll, and Python should be self explanatory.  I installed RubyInstaller 1.8.7 RC2 to C:\Ruby187\ and Python 2.6.4 to C:\Python26\\. 
 
 Modify the code in albino.rb and highlight.rb from C:\Ruby187\lib\ruby\gems\1.8\gems\jekyll-0.5.7\lib\jekyll\ using the following gists:
 
