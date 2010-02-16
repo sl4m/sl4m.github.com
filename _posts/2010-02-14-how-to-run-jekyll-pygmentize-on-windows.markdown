@@ -14,7 +14,7 @@ This is a quick patch created by [Jon](http://github.com/jonforums) at [RubyInst
 
 *What You Need*
 
-* Any [RubyInstaller MinGW version](http://rubyinstaller.org/download.html) or [1.8.7/1.9.1 mswin32](http://www.ruby-lang.org/en/downloads/) (Not tested on One-Click Installer and Jon will soon test on Ubuntu)
+* Any [RubyInstaller MinGW version](http://rubyinstaller.org/download.html) or [1.8.7/1.9.1 mswin32](http://www.ruby-lang.org/en/downloads/) (Not tested using One-Click Installer)
 * [jekyll gem](http://gemcutter.org/gems/jekyll)
 * [Python](http://www.python.org/download/) 2.3 or higher (I used 2.6.4)
 * [setuptools 0.6c11](http://pypi.python.org/pypi/setuptools) for easy_install
