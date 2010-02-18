@@ -1,7 +1,8 @@
 body{
   background: #FAF9F8;
   font-family: Helvetica, Arial, Sans-serif;
-  font-size: 18px;
+  font-size: 17px;
+  line-height: 1.7em;
   margin: 0;
 }
 a{
@@ -41,6 +42,7 @@ h1{
   font-size: 42px;
   border-bottom: 1px solid #eee;
   margin-bottom: .25em;
+  padding-bottom: 8px;
 }
 h2{
 }
@@ -54,6 +56,7 @@ h3{
   text-decoration: none;
 }
 #header #title{
+  font-size: 20px;
   padding-top: 8px;
 }
 #header #misc{
