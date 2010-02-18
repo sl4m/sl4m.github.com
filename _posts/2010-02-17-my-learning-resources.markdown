@@ -15,7 +15,7 @@ categories:
 There is no */ one | right /* way about learning.  I've looked around the net and found these along the way:
 
 *Ruby*
-
+ 
 Books>>
 
 Free e-books available online:
