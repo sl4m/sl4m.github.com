@@ -50,6 +50,8 @@ There is a free online Ruby course from [RubyLearning](http://www.rubylearning.o
 
 Rails changes rapidly, so spending money on a dead-tree version of a book is probably not the best way to go.  In any case, Prag Prog's "Agile Web Development with Rails, Third Edition" is the latest book on Rails.  Unfortunately it does not contain Rails 3.0, but this ongoing [wiki page](http://www.pragprog.com/wikis/wiki/ChangesInRails30) contains information about the beta and about Rails Fourth Edition.
 
+O'Reilly recently announced the [Live Edition of Learning Rails](http://broadcast.oreilly.com/2010/02/a-live-edition-for-learning-ra.html) which will include Rails 3.x content.
+
 There's also a Rails 3 Upgrade Handbook by Jeremy McAnally coming out soon.  Sign up [here](http://spreadsheets.google.com/viewform?formkey=dEVNNjJLSlMzNzBGcEVQWERFY0N4bGc6MA) to be notified when it's available.
 
 *Online Courses*
