@@ -12,7 +12,7 @@ categories:
 
 This is a quick patch created by [Jon](http://github.com/jonforums) at [RubyInstaller Google Group](http://groups.google.com/group/rubyinstaller/t/400ecfe5d528b558).
 
-*What You Need*
+## What You Need
 
 * Any [RubyInstaller MinGW version](http://rubyinstaller.org/download.html) or [1.8.7/1.9.1 mswin32](http://www.ruby-lang.org/en/downloads/) (Not tested using One-Click Installer)
 * [jekyll gem](http://gemcutter.org/gems/jekyll)
@@ -20,7 +20,7 @@ This is a quick patch created by [Jon](http://github.com/jonforums) at [RubyInst
 * [setuptools 0.6c11](http://pypi.python.org/pypi/setuptools) for easy_install
 * [pygments](http://pygments.org/) (install with easy_install)
 
-*Installation*
+## Installation
 
 Installing Ruby, jekyll, and Python should be self explanatory.  I installed RubyInstaller 1.8.7 RC2 to C:\Ruby187\ and Python 2.6.4 to C:\Python26\\. 
 

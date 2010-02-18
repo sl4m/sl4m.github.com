@@ -11,14 +11,14 @@ categories:
 
 Yesterday, I upgraded my Vista x64 machine to Windows 7 x64, so I needed to set up my Ruby/Rails environment again.  As done previously, I followed information on AkitaOnRails' blog post, [The Best Environment for Rails on Windows](http://akitaonrails.com/2009/1/13/the-best-environment-for-rails-on-windows) to install the latest [msysgit](http://code.google.com/p/msysgit/), Exuberant CTags, [gvim](http://www.vim.org/index.php), and [vimfiles](http://akitaonrails.com/2009/04/27/the-best-environment-for-rails-on-windows-part-2), replacing the deprecated One-Click Ruby Installer with the new [RubyInstaller 1.8.7 RC2](http://rubyforge.org/frs/?group_id=167&release_id=42563) that officially came out today.
 
-*Requirements*
+## Requirements
 
 * [RubyInstaller 1.8.7 RC2](http://rubyforge.org/frs/download.php/69034/rubyinstaller-1.8.7-p249-rc2.exe)
 * [DevKit 3.4.5r3-20091110](http://rubyforge.org/frs/download.php/66888/devkit-3.4.5r3-20091110.7z)
 * [7-zip](http://www.7-zip.org/download.html) or zip program to uninstall 7z extensions
 * [SQLite3](http://www.sqlite.org/sqlitedll-3_6_22.zip)
 
-*Installation*
+## Installation
 
 I chose C:\Ruby187\ as my default path and applied DevKit on top of it.  Be sure to follow the instructions in INSTALL.txt in the DevKit archive.  I placed sqlite3.dll in C:\Ruby187\bin.
 
