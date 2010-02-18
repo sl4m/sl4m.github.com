@@ -5,13 +5,12 @@ layout: nil
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>skim</title>
-
- <link href="http://sl4m.github.com/"/>
+ <link href="http://skim.la/atom.xml" rel="self"/>
+ <link href="http://skim.la/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://sl4m.github.com/</id>
+ <id>http://skim.la/</id>
  <author>
    <name>skim</name>
-   <email>skim.la@gmail.com</email>
  </author>
  
  {% for post in site.posts %}
@@ -20,9 +19,9 @@ layout: nil
    {% for category in post.categories %}
    <category term="{{category}}" />
    {% endfor %}
-   <link href="http://sl4m.github.com{{ post.url }}"/>
+   <link href="http://skim.la{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://sl4m.github.com{{ post.id }}</id>
+   <id>http://skim.la{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
