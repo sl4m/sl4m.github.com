@@ -15,6 +15,7 @@
 .highlight:hover {
   overflow: auto;
 }
+.highlight a { color: #65b042 }
 .highlight .hll { background-color: #333333 }
 .highlight .c { color: #aeaeae; font-style: italic; } /* Comment */
 .highlight .err { color: #ffffff } /* Error */
