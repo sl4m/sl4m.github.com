@@ -34,6 +34,8 @@ Gregory T. Brown is slowly releasing his book, ["Ruby Best Practices"](http://ru
 
 There is a free online Ruby course from [RubyLearning](http://www.rubylearning.org/class/) which I highly recommend.  Although, I have not yet completed the course, the latest course covers Ruby 1.9.1, and there are a lot of mentors willing to help in the course forum.
 
+This is not really an online course, but a self-teaching set of tests called [Ruby Koans](http://github.com/edgecase/ruby_koans/).  Follow the instructions and it will guide to path to enlightenment.
+
 *Online Resources*
 
 * [Official Ruby website](http://www.ruby-lang.org/en/)
