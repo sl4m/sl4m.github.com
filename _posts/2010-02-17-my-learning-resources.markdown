@@ -66,6 +66,8 @@ I started using [Learning Rails](http://www.buildingwebapps.com/learningrails), 
 * [Official Rails community](http://rubyonrails.org/community)
 * [Akita On Rails](http://www.akitaonrails.com/english)
 * [Railscasts](http://railscasts.com/)
+* [Ruby on Rails guides](http://guides.rubyonrails.org/)
+* [Rails Bridge](http://railsbridge.org/)
 
 *Mentorship*
 
