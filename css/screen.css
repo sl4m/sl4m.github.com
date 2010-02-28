@@ -33,6 +33,7 @@ p code{
 h1,h2,h3,h4{
   font-family: "liberation-sans-1", "liberation-sans-2", Sans-serif;
   font-weight: normal;
+  line-height: 1em;
 }
 h1 a, h2 a, h3 a, h4 a{
   color: #3B3A40;
