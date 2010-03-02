@@ -1,3 +1,6 @@
+.highlight + .highlight {
+  display: none;
+}
 .highlight {
   color: #FAF9F8;
   background-color: #333333; 
