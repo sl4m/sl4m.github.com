@@ -8,6 +8,8 @@ categories:
   -- ssh
 ---
 
+*Update*: Scott Chacon recently [posted](http://progit.org/2010/03/04/smart-http.html) about Smart HTTP transport which is basically the ability to perform git commands over HTTP with authentication, but unfortunately, it only works for git clients version 1.6.6 and above.  [msysgit (Git for Windows)](http://code.google.com/p/msysgit/) is currently on version 1.6.5.1.  I will write a post about it once there's a new version of msysgit.  [Git for OS X](http://code.google.com/p/git-osx-installer/) has the supported clients.
+
 [Jeff Tchang](http://returnbooleantrue.blogspot.com/2009/06/using-github-through-draconian-proxies.html) does a pretty nice job explaining how to use git commands via SSH through the corporate proxy on Unix and Windows.  I'm just going to fill in a few missing gaps.  This is a straight guide for making git work on Windows in your corporate environment.
 
 ## What You'll Need
