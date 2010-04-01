@@ -106,4 +106,31 @@ I added additional tests just for the heck of it:
   end
 {% endhighlight %}
 
+Here's my Proxy class from *about\_proxy\_object\_project\_.rb*:
+
+{% highlight ruby %}
+class Proxy
+  attr_reader :messages
+
+  def initialize(target_object)
+    @object = target_object
+    @messages = []
+  end
+
+  def method_missing(method_name, *args, &block)
+    @messages.push(method_name)
+    @object.__send__(method_name, *args)
+  end
+
+  def called?(message)
+    return true unless @messages.index(message).nil?
+    false
+  end
+
+  def number_of_times_called(message)
+    return @messages.count(message)
+  end
+end
+{% endhighlight %}
+
 Have fun!
