@@ -78,9 +78,9 @@ Ruby does not interpret escape characters when using single quotes (except itsel
 {% endhighlight %}
 *JavaScript*
 {% highlight javascript %}
-"\n".length # 1
-'\n'.length # 1
-'\''        # "'"
+"\n".length // 1
+'\n'.length // 1
+'\''        // "'"
 {% endhighlight %}
 
 Ruby has some other features.
