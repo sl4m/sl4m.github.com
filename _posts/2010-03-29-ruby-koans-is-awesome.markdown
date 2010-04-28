@@ -106,7 +106,7 @@ I added additional tests just for the heck of it:
   end
 {% endhighlight %}
 
-Here's my Proxy class from *about\_proxy\_object\_project\_.rb*:
+Here's my Proxy class from *about\_proxy\_object\_project.rb*:
 
 {% highlight ruby %}
 class Proxy
