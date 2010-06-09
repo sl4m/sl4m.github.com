@@ -8,7 +8,7 @@ categories:
   -- tdd
 ---
 
-One of the many refactoring techniques I can apply to my smelly Tic Tac Toe code is [Extract Class](http://en.wikipedia.org/wiki/Extract_class).  One of the 8th Lighters pointed me to Martin Fowler's book ["Refactoring"](http://www.amazon.com/Refactoring-Improving-Design-Existing-Technology/dp/0201485672/) which lists a good number of refactoring techniques.  In short, Extract Class refactoring is used to extract methods from an overweight class that has lost its purpose to a new class.  I used this refactoring to extract methods that had reference to the board.  While it's not a significant change, it helped me understand how to use RSpec and drive the code via TDD.  Here's the code and tests.
+One of the many refactoring techniques I can apply to my smelly Tic Tac Toe code is [Extract Class](http://en.wikipedia.org/wiki/Extract_class).  One of the 8th Lighters pointed me to Martin Fowler's book ["Refactoring"](http://www.amazon.com/Refactoring-Improving-Design-Existing-Technology/dp/0201485672/) which lists a good number of refactoring techniques.  In short, Extract Class refactoring is used to extract methods from an overweight class that has lost its purpose to a new class.  I used this refactoring to extract methods that had reference to the board.  While it's not a significant change, it helped me understand how to use RSpec and drive the code via TDD.  Here's the code.
 
 {% highlight ruby %}
 # move positions
@@ -200,6 +200,8 @@ if $0 == __FILE__
   TicTacToe.new.play
 end
 {% endhighlight %}
+
+Here are the tests.
 
 {% highlight ruby %}
 # tictactoe_spec.rb
