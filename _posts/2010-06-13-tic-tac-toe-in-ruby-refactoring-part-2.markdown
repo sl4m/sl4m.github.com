@@ -8,7 +8,7 @@ categories:
   -- tdd
 ---
 
-Over the weekend, I spent more time refactoring my Tic Tac Toe program.  It now looks completely different from the [original](http://skim.la/2010/03/15/tic-tac-toe-in-ruby-and-javascript) source code.  I attempted to use TDD 100% of the time, and I found myself using almost all the time.  It took some time getting used to writing tests first, but once I got the hang of it, it felt comfortable.  There's still a lot of work to do, but here is the main file along with some tests.  You can see the rest of the source code on my GitHub [repo](http://github.com/sl4m/tic_tac_toe_ruby). 
+Over the weekend, I spent more time refactoring my Tic Tac Toe program.  It now looks completely different from the [original](http://skim.la/2010/03/15/tic-tac-toe-in-ruby-and-javascript) source code.  I attempted to use TDD 100% of the time, and I found myself using it almost all the time.  It took some time getting used to writing tests first, but once I got the hang of it, it felt comfortable.  There's still a lot of work to do, but here is the main file along with some tests.  You can see the rest of the source code on my GitHub [repo](http://github.com/sl4m/tic_tac_toe_ruby). 
 
 {% highlight ruby %}
 # move positions
@@ -106,29 +106,12 @@ describe TicTacToe do
     @ttt.std_out.should == @std_out
   end
 
-  it "should ask player types for both players" do
-    player1 = HumanPlayer.new('O', @std_in, @std_out)
-    player2 = CpuPlayer.new('X')
-    @ttt.should_receive(:choose_players)
-    @ttt.game.player1.should_receive(:make_move).and_return(0)
-    @ttt.game.player2.should_receive(:make_move).and_return(3)
-    @ttt.game.player1.should_receive(:make_move).and_return(1)
-    @ttt.game.player2.should_receive(:make_move).and_return(4)
-    @ttt.game.player1.should_receive(:make_move).and_return(2)
-    @ttt.play
-  end
-
   it "should return player" do
     @ttt.std_in.string = "h"
     @ttt.ask_for_player('O').instance_of?(HumanPlayer)
     @ttt.std_in.string = "c"
     @ttt.ask_for_player('X').instance_of?(CpuPlayer)
   end
-
-#  it "should play a new game on start" do
-#    @ttt.game.instance_of?(Game)
-#    @ttt.play
-#  end
 end
 {% endhighlight %}
 
