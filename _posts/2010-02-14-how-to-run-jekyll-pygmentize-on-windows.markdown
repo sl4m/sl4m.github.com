@@ -10,7 +10,7 @@ categories:
   -- windows
 ---
 
-Updated 06/14/2010 -- This is a quick patch created by [Jon](http://github.com/jonforums) at [RubyInstaller Google Group](http://groups.google.com/group/rubyinstaller/t/400ecfe5d528b558).
+*Updated 06/14/2010* -- This is a quick patch created by [Jon](http://github.com/jonforums) at [RubyInstaller Google Group](http://groups.google.com/group/rubyinstaller/t/400ecfe5d528b558).
 
 ## What You Need
 
