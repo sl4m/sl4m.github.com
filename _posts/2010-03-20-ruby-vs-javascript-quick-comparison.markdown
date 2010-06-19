@@ -58,6 +58,16 @@ world
 }                   # "\nhello\nworld\n"
 {% endhighlight %}
 
+Ruby supports [heredocs](http://en.wikipedia.org/wiki/Here_document).
+
+*Ruby*
+{% highlight ruby %}
+f = <<EOS
+hello
+world
+EOS
+{% endhighlight %}
+
 Ruby uses the shovel operator to modify original strings.
 
 *Ruby*
