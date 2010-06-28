@@ -7,11 +7,13 @@ categories:
   -- github
 ---
 
-As I aim to become better at using git, I thought I'd share how to branch, then later merge the branch on a git repo.  I wanted to do this for my Tic Tac Toe project which was going to implement the Limelight UI.  It's actually fairly easy to branch and merge.  I used [Scott Chacon's](http://twitter.com/chacon) wonderful [Git Reference website](http://gitref.org/) and followed his examples.
+As I aim to become better at using git, I thought I'd share how to branch, then later merge the branch on a git repo.  I wanted to do this for my Tic Tac Toe project because I was going to add the Limelight UI.  It's actually fairly easy to branch and merge.  I used [Scott Chacon's](http://twitter.com/chacon) wonderful [Git Reference website](http://gitref.org/) and followed his examples.
 
-*Listing current branches*
+## Listing current branches
 
 Note: I'm using zsh and these [dot files](http://github.com/jferris/config_files).
+
+To list local branches:
 
 {% highlight text %}
 [master][~/local/git/tic_tac_toe_ruby] git branch
@@ -26,7 +28,7 @@ To list remote branches:
   origin/master
 {% endhighlight %}
 
-*Create a new branch, check out new branch*
+## Create a new branch, check out new branch
 
 Here I'm going to create a branch called limelight.
 
@@ -55,7 +57,7 @@ Switched to a new branch 'limelight'
 
 Go have at it and start making changes to the new branch.  Once you're finished and you want to merge your changes in this branch to, let's say, master, you'll need to use *git merge*.
 
-*Merging a branch to another*
+## Merging a branch to another
 
 *git merge* is super smart about detecting folder/file creates/deletes as well as modifications to existing folders/files.  One of the only times where it may not quite understand what you want is when you make modifications of the same folder/file on both branches.  You'll run into merge conflicts which I'll talk about later.
 
@@ -113,7 +115,7 @@ To git@github.com:sl4m/tic_tac_toe_ruby.git
 
 Now you'll see the merged changes in your remote repo.
 
-*Delete a local branch and then remote branch*
+## Delete a local branch and then remote branch
 
 Finally, and optionally, you can delete your local branch if you don't need it anymore.  You can also make the change reflect on your remote repo.
 
