@@ -1,6 +1,6 @@
 ---
 layout: post
-title: git branching and merging
+title: list of rspec built-in expectations
 date: 2010-06-29 20:30:00 -05:00
 categories:
   -- ruby
