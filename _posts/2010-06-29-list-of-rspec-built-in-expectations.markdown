@@ -9,7 +9,7 @@ categories:
 
 Here's the list of RSpec Built-in expectations straight off of David Chelimsky's [RSpec](http://www.pragprog.com/titles/achbd/the-rspec-book) book.
 
-{% highlight ruby %}
+{% highlight text %}
 actual.should equal(expected)
 actual.should eql(expected)
 actual.should == expected 
