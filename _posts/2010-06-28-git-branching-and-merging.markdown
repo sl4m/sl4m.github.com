@@ -59,7 +59,7 @@ Go have at it and start making changes to the new branch.  Once you're finished 
 
 ## Merging a branch to another
 
-*git merge* is super smart about detecting folder/file creates/deletes as well as modifications to existing folders/files.  One of the only times where it may not quite understand what you want is when you make modifications of the same folder/file on both branches.  You'll run into merge conflicts which I'll talk about later.
+*git merge* is super smart about detecting folder/file creates/deletes as well as modifications to existing folders/files.  One of the only times where it may not quite understand what you want is when you make modifications of the same folder/file on both branches.  You'll run into merge conflicts which you can read more about [here](http://gitref.org/branching/#merge).
 
 To merge a branch (limelight) to another (master), check out master and run *git merge*:
 
