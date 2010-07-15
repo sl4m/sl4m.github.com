@@ -34,7 +34,7 @@ Gregory T. Brown is slowly releasing his book, ["Ruby Best Practices"](http://ru
 
 There is a free online Ruby course from [RubyLearning](http://www.rubylearning.org/class/) which I highly recommend.  Although, I have not yet completed the course, the latest course covers Ruby 1.9.1, and there are a lot of mentors willing to help in the course forum.
 
-This is not really an online course, but a self-teaching set of tests called [Ruby Koans](http://github.com/edgecase/ruby_koans/).  Follow the instructions and it will guide to path to enlightenment.
+This is not really an online course, but a self-teaching set of tests called [Ruby Koans](http://github.com/edgecase/ruby_koans/).  Follow the instructions and it will guide you to the path of enlightenment.
 
 *Online Resources*
 
@@ -54,7 +54,7 @@ Rails changes rapidly, so spending money on a dead-tree version of a book is pro
 
 O'Reilly recently announced the [Live Edition of Learning Rails](http://broadcast.oreilly.com/2010/02/a-live-edition-for-learning-ra.html) which will include Rails 3.x content.
 
-There's also a Rails 3 Upgrade Handbook by Jeremy McAnally coming out soon.  Sign up [here](http://spreadsheets.google.com/viewform?formkey=dEVNNjJLSlMzNzBGcEVQWERFY0N4bGc6MA) to be notified when it's available.
+There's also a Rails 3 Upgrade Handbook by Jeremy McAnally coming out soon.  Sign up [here](http://spreadsheets.google.com/viewform?formkey=dEVNNjJLSlMzNzBGcEVQWERFY0N4bGc6MA) to be notified when it's available.  *Update:* it's out [now](http://www.railsupgradehandbook.com/)
 
 *Online Courses*
 
@@ -71,7 +71,7 @@ I started using [Learning Rails](http://www.buildingwebapps.com/learningrails), 
 
 *Mentorship*
 
-Probably the best move I've made is finding a Ruby on Rails mentor at [Rails Mentors](http://railsmentors.org/).  Los Angeles-based Rails developer, [@kris](http://twitter.com/mrkris), accepted my mentorship.  We spoke this past weekend via Skype and will start on a project that will create custom feeds for RSS-less websites.  It's a private [github repo](https://github.com/kris/mentor-sl4m) as of now and we may open it up in the future, but for now, I will blog about the project here.  I'm pretty excited to start this project and will hopefully learn a lot from it.
+Probably the best move I've made is finding a Ruby on Rails mentor at [Rails Mentors](http://railsmentors.org/).  Los Angeles-based Rails developer, [@kris](http://twitter.com/mrkris), accepted my mentorship.  We spoke this past weekend via Skype and will start on a project that will create custom feeds for RSS-less websites.  It's a private github repo as of now and we may open it up in the future, but for now, I will blog about the project here.  I'm pretty excited to start this project and will hopefully learn a lot from it.
 
 ## Metaprogramming
 
@@ -95,7 +95,7 @@ I still have much to learn in this area.  To start off, however, I recommend sta
 
 *Online Resources*
 
-* [Apprenticeship Patterns wiki](http://apprenticeship.oreilly.com/) (currently not available)
+* [Apprenticeship Patterns wiki](http://apprenticeship-patterns.labs.oreilly.com/) 
 * [Software Craftsmanship Manifesto](http://manifesto.softwarecraftsmanship.org/)
 * [Software Craftsmanship Google Group](http://groups.google.com/group/software_craftsmanship)
 * [Software Craftsmanship Wiki](http://wiki.softwarecraftsmanship.org/doku.php)
