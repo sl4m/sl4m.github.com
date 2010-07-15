@@ -15,14 +15,14 @@ Note: I'm using zsh and these [dot files](http://github.com/jferris/config_files
 
 To list local branches:
 
-{% highlight text %}
+{% highlight console %}
 [master][~/local/git/tic_tac_toe_ruby] git branch
 * master
 {% endhighlight %}
 
 To list remote branches:
 
-{% highlight text %}
+{% highlight console %}
 [master][~/local/git/tic_tac_toe_ruby] git branch -r
   origin/HEAD -> origin/master
   origin/master
@@ -32,7 +32,7 @@ To list remote branches:
 
 Here I'm going to create a branch called limelight.
 
-{% highlight text %}
+{% highlight console %}
 [master][~/local/git/tic_tac_toe_ruby] git branch limelight
 [master][~/local/git/tic_tac_toe_ruby] git branch
   limelight
