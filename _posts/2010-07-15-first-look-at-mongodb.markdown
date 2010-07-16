@@ -45,7 +45,7 @@ ruby-1.8.7-p299 > cursor.to_a[0]["name"]
  => "sam" 
 {% endhighlight %}
 
-*Note:* I took out the return values of most of the commands in the IRB session.
+*Note:* I took out the return values for most of the commands in the IRB session.
 
 Once you have a collection object, there are many ways to query the collection.  The basic query command is the *find* command as shown above.  Without any arguments, it returns the entire collection as a Mongo::Collection object.  With arguments, you can specify which documents you want returned in a cursor (Mongo::Cursor).
 
