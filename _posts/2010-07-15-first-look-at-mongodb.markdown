@@ -15,7 +15,7 @@ Here's what I learned from today's experimentation with MongoDB.  Kudos to [10ge
 <tr class='even'><td>table</td><td>collection</td></tr>
 <tr><td>row</td><td>document</td></tr>
 <tr class='even'><td>column</td><td>field</td></tr>
-<tr><td>primary key</td><td>\_id</td></tr>
+<tr><td>primary key</td><td>_id</td></tr>
 </table>
 
 Using the mongo gem in an irb session, I learned about the classes in MongoDB.
