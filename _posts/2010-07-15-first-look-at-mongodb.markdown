@@ -18,7 +18,7 @@ Here's what I learned from today's experimentation with MongoDB.  Kudos to [10ge
 <tr><td>primary key</td><td>_id</td></tr>
 </table>
 
-Using the mongo gem in an irb session, I learned about the classes in MongoDB.
+Using the mongo [gem](http://rubygems.org/gems/mongo) in an irb session, I learned about the classes in MongoDB.
 
 <table>
 <tr><th>MongoDB Class Name</th><th>Description</th></tr>
