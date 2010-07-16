@@ -29,7 +29,7 @@ Using the mongo gem in an irb session, I learned about the classes in MongoDB.
 <tr><td>BSON::OrderedHash</td><td>OrderedHash object holds a document</td></tr>
 </table>
 
-{% highlight ruby %}
+{% highlight text %}
 [~] irb
 ruby-1.8.7-p299 > require 'rubygems'
 ruby-1.8.7-p299 > require 'mongo'
@@ -51,35 +51,35 @@ Once you have a collection object, there are many ways to query the collection. 
 
 Find a document object with a 'name' field, and 'dixie' value.
 
-{% highlight ruby %}
+{% highlight text %}
 ruby-1.8.7-p299 > collection.find({'name' => 'dixie'})
  => <Mongo::Cursor:0x8094bb0c namespace='test_db.test_coll' @selector={"name"=>"dixie"}> 
 {% endhighlight %}
 
 You can search using any field.
 
-{% highlight ruby %}
+{% highlight text %}
 ruby-1.8.7-p299 > collection.find({'animal' => 'dog'})
  => <Mongo::Cursor:0x80949488 namespace='test_db.test_coll' @selector={"animal"=>"dog"}> 
 {% endhighlight %}
 
 You can search against multiple fields to get a more refined search.
 
-{% highlight ruby %}
+{% highlight text %}
 ruby-1.8.7-p299 > collection.find({'name' => 'dixie', 'animal' => 'fish'})
  => <Mongo::Cursor:0x809414f4 namespace='test_db.test_coll' @selector={"name"=>"dixie", "animal"=>"fish"}> 
 {% endhighlight %}
 
 If not searching with exact values, you can use regular expressions or [conditional operators](http://www.mongodb.org/display/DOCS/Advanced+Queries).
 
-{% highlight ruby %}
+{% highlight text %}
 ruby-1.8.7-p299 > collection.find({'name' => /^d/})
  => <Mongo::Cursor:0x8090b048 namespace='test_db.test_coll' @selector={"name"=>/^d/}> 
 {% endhighlight %}
 
 I plan to write all of the possible moves in a 4x4 Tic Tac Toe game and export the collection as a \*.bson file.
 
-{% highlight ruby %}
+{% highlight text %}
 {'board' => [], 'best_moves' => []}
 {% endhighlight %}
 
