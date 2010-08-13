@@ -203,6 +203,8 @@ I initially began writing the game in JavaScript, but couldn't figure out a way 
 
 *Update:* This code no longer runs properly on the latest Node.js.  I will post an update shortly.
 
+*Update 2:* New code is posted on the GitHub [repo](http://github.com/sl4m/tic_tac_toe_js).
+
 {% highlight javascript %}
 /**
   move positions
