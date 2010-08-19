@@ -55,6 +55,31 @@ You could easily kill two birds with one stone and create a branch and check it 
 Switched to a new branch 'limelight'
 {% endhighlight %}
 
+Or kill four birds with two stones: create a remote branch, create a local branch, track the local branch with a remote branch and check out the new local branch.
+
+This creates a copy of origin into a new remote branch:
+
+{% highlight text %}
+[master][~/local/git/tic_tac_toe_ruby] git push origin origin:refs/heads/limelight
+Total 0 (delta 0), reused 0 (delta 0)
+To git@github.com:sl4m/tic_tic_toe_ruby.git
+ * [new branch]      origin/HEAD -> limelight
+
+[master][~/local/git/tic_tac_toe_ruby] git branch -a
+master
+remotes/origin/HEAD -> origin/master
+remotes/origin/limelight
+remotes/origin/master
+{% endhighlight %}
+
+This creates a local branch, tracks it with the newly created remote branch, and checks it out:
+
+{% highlight text %}
+[master][~/local/git/tic_tac_toe_ruby] git checkout --track -b limelight origin/limelight
+Branch limelight set up to track remote branch limelight from origin.
+Switched to a new branch 'limelight'
+{% endhighlight %}
+
 Go have at it and start making changes to the new branch.  Once you're finished and you want to merge your changes in this branch to, let's say, master, you'll need to use *git merge*.
 
 ## Merging a branch to another
