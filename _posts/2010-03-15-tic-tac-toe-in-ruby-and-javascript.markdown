@@ -28,6 +28,8 @@ I was at a loss.  I think it was easy for my friend since he thinks in RL, but I
 
 ## Tic Tac Toe in Ruby
 
+*Update:* This code is old and has been replaced.  See the latest [here](http://github.com/sl4m/tic_tac_toe_ruby).
+
 {% highlight ruby %}
 # move positions
 #
@@ -198,6 +200,10 @@ end
 I initially began writing the game in JavaScript, but couldn't figure out a way to display the board in the console without having to deal with the browser.  Luckily, I was pointed in the right direction and used [Node.js](http://nodejs.org/) (sadly does not work on Windows).  It handled the stdout/stdin just fine.  I had to fiddle around with stdin by using Node's process object and add a listener for stdin.  It wasn't immediately intuitive how the listener worked, but I was able to finally get it to prompt for user input multiple times to play the game.
 
 ## Tic Tac Toe in JavaScript
+
+*Update:* This code no longer runs properly on the latest Node.js.  I will post an update shortly.
+
+*Update 2:* New code is posted on the GitHub [repo](http://github.com/sl4m/tic_tac_toe_js).
 
 {% highlight javascript %}
 /**
