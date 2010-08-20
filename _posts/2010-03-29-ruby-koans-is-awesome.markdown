@@ -7,6 +7,8 @@ categories:
   -- continuous learning
 ---
 
+*Note:* The creators of Ruby Koans, Edgecase, has created a wonderful Ruby Koans website.  Check it [out](http://www.rubykoans.com/). 
+
 [Ruby Koans](http://github.com/edgecase/ruby_koans) is a set of tests to teach you the Ruby language.  I'm impressed how much I'm learning from these tests and right off the bat, it's using Test::Unit which gives you an introduction to [TDD](http://en.wikipedia.org/wiki/Test-driven_development) style coding.
 
 ## How to get started
