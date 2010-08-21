@@ -182,3 +182,5 @@ E:\p\rails\rails3rc>rails server
 Now you should see that familiar **Welcome aboard** page on [http://localhost:3000/](http://localhost:3000/).
 
 ![Rails 3 RC](/images/rails3rc.jpg)
+
+Now follow the [Rails 3 Guide](http://edgeguides.rubyonrails.org/) to build yourself a Rails 3 app!
