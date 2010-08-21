@@ -54,7 +54,7 @@ If you read my previous [Rails 3 post](http://skim.la/2010/02/07/rails-3-beta-on
 
 Next up is installing SQLite or MySQL (your preference).
 
-*Note:* The official Rails blog [mentions](http://weblog.rubyonrails.org/2010/7/26/rails-3-0-release-candidate) support for the MySQL2 gem which takes care of the MySQL encoding issues on Ruby 1.9.2.  At the time of this writing, I could not install MySQL gem on my Windows box, but the gem author seems to be [fully aware](http://github.com/brianmario/mysql2/issues#issue/8) of the situation.  In the meantime you should be able to use [SQLite](http://blog.mmediasys.com/2009/07/06/getting-started-with-rails-and-sqlite3/) or [MySQL with the mysql gem](http://blog.mmediasys.com/2009/07/06/getting-started-with-rails-and-mysql/).
+*Note:* The official Rails blog [mentions](http://weblog.rubyonrails.org/2010/7/26/rails-3-0-release-candidate) support for the MySQL2 gem which takes care of the MySQL encoding issues on Ruby 1.9.2.  At the time of this writing, I could not install MySQL2 gem on my Windows box, but the gem author seems to be [fully aware](http://github.com/brianmario/mysql2/issues#issue/8) of the situation.  In the meantime you should be able to use [SQLite](http://blog.mmediasys.com/2009/07/06/getting-started-with-rails-and-sqlite3/) or [MySQL with the mysql gem](http://blog.mmediasys.com/2009/07/06/getting-started-with-rails-and-mysql/).
 
 Let's install SQLite:
 
@@ -82,7 +82,7 @@ Successfully installed sqlite3-ruby-1.3.1-x86-mingw32
 1 gem installed
 {% endhighlight %}
 
-The instructions above said to use SQLite version 3.6.23.1 and provides a link to the dll.  I would also get the exe which is available [here](http://www.sqlite.org/sqlite-3_6_23_1.zip).  Place the dll in C:\Ruby192\bin and the exe in C:\Windows.
+The instructions above said to use SQLite version 3.6.23.1 and provides a link to the dll.  I would also get the exe which is available [here](http://www.sqlite.org/sqlite-3_6_23_1.zip).  Place the dll in *C:\Ruby192\bin* and the exe in *C:\Windows*.
 
 Now let's create a new Rails app.  Note, the new command to create the app:
 
@@ -179,6 +179,6 @@ E:\p\rails\rails3rc>rails server
 [2010-08-21 11:48:18] INFO  WEBrick::HTTPServer#start: pid=4296 port=3000
 {% endhighlight %}
 
-Now you should see that familiar Welcome aboard page on [http://localhost:3000/](http://localhost:3000/).
+Now you should see that familiar **Welcome aboard** page on [http://localhost:3000/](http://localhost:3000/).
 
 ![Rails 3 RC](/images/rails3rc.jpg)
