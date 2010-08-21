@@ -9,6 +9,8 @@ categories:
   -- rubyinstaller
 ---
 
+*Note:* I have posted an update using Rails 3 RC and Ruby 1.9.2 [here](http://skim.la/2010/08/21/rails-3-rc-on-windows-using-rubyinstaller-192).
+
 Yesterday, I upgraded my Vista x64 machine to Windows 7 x64, so I needed to set up my Ruby/Rails environment again.  As done previously, I followed information on AkitaOnRails' blog post, [The Best Environment for Rails on Windows](http://akitaonrails.com/2009/1/13/the-best-environment-for-rails-on-windows) to install the latest [msysgit](http://code.google.com/p/msysgit/), Exuberant CTags, [gvim](http://www.vim.org/index.php), and [vimfiles](http://akitaonrails.com/2009/04/27/the-best-environment-for-rails-on-windows-part-2), replacing the deprecated One-Click Ruby Installer with the new [RubyInstaller 1.8.7 RC2](http://rubyforge.org/frs/?group_id=167&release_id=42563) that officially came out today.
 
 ## Requirements
