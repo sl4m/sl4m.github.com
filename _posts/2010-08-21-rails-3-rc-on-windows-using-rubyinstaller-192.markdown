@@ -82,7 +82,7 @@ Successfully installed sqlite3-ruby-1.3.1-x86-mingw32
 1 gem installed
 {% endhighlight %}
 
-The instructions above said to use SQLite version 3.6.23.1 and provides a link to the dll.  I would also get the exe which is available [here](http://www.sqlite.org/sqlite-3_6_23_1.zip).  Place the dll in *C:\Ruby192\bin* and the exe in *C:\Windows*.
+The instructions above says to use SQLite version 3.6.23.1 and provides a link to the dll.  I would also get the exe which is available [here](http://www.sqlite.org/sqlite-3_6_23_1.zip).  Place sqlite3.dll and sqlite3.exe in *C:\Ruby192\bin* or a general bin directory in the PATH (thanks for the correction, Luis!).
 
 Now let's create a new Rails app.  Note, the new command to create the app:
 
