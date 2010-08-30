@@ -7,6 +7,8 @@ categories:
   -- rails
 ---
 
+*Update:* Rails 3 is now available.  The instructions below should also work for the final release.
+
 This week the Ruby team [released](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/367983) the most anticipated Ruby version, 1.9.2, and yesterday, the RubyInstaller team [released](http://groups.google.com/group/rubyinstaller/browse_thread/thread/67902a04f12cc726#) 1.9.2 for Windows.  Kudos to both teams for the hard work and dedication.
 
 ## Requirements
