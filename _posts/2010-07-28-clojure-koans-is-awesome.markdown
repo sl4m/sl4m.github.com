@@ -75,6 +75,8 @@ drwxr-xr-x  13 skim  staff   442B Jul 28 22:14 ../
 -rw-r--r--   1 skim  staff   3.1M Jul 27 20:54 clojure-1.2.0-beta1.jar
 {% endhighlight %}
 
+*Update:* There's another way to do this.  Read the comment below from Raju. 
+
 ## Running Clojure Koans
 
 Ok, now I'm not sure how this works exactly on Windows, but Mac and Linux, you should be able to run koans this way:
