@@ -7,7 +7,7 @@ categories:
   -- koans
 ---
 
-I attended my first [Chicago Clojure](http://www.meetup.com/Chicago-Clojure/) meetup and 8th Light's [Colin Jones](http://twitter/com/trptcolin) introduced us to Clojure Koans, a Ruby Koans inspired set of tests to teach you [Clojure](http://clojure.org/), a functional programming language.  After finishing the koans that night, I have a better understanding of how Clojure syntax works.  You might have heard Clojure uses a lot of parentheses - it's probably not an overstatement.
+I attended my first [Chicago Clojure](http://www.meetup.com/Chicago-Clojure/) meetup and 8th Light's [Colin Jones](http://twitter.com/trptcolin) introduced us to Clojure Koans, a Ruby Koans inspired set of tests to teach you [Clojure](http://clojure.org/), a functional programming language.  After finishing the koans that night, I have a better understanding of how Clojure syntax works.  You might have heard Clojure uses a lot of parentheses - it's probably not an overstatement.
 
 Here's how to get started and reach your way to enlightenment.
 
