@@ -48,8 +48,8 @@ end
 {% highlight ruby %}
 module Sieve
   def self.of(n)
-    not_primes = []
     return [] if n <= 1
+    not_primes = []
     (2..n).each do |num|
       if num <= Math.sqrt(n)
         (2..n).each do |p|
