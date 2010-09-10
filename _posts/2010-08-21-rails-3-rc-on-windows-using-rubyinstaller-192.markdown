@@ -21,7 +21,7 @@ This week the Ruby team [released](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/
 
 Installing Ruby using RubyInstaller should be straight forward.  The installer automatically defaults the path to *C:\Ruby192*.  If you have used DevKit in the past, you'll notice this DevKit requires a different way to install.  I highly recommend following the instructions [here](http://wiki.github.com/oneclick/rubyinstaller/development-kit).  You'll need to remove the old DevKit install for other Ruby installations and install the new DevKit using the *dk.rb* script.
 
-Install Rails 3 using the *--pre* parameter.
+Install Rails 3 using the *--pre* parameter.  *Update:* --pre is no longer necessary now that Rails 3 is official
 
 {% highlight text %}
 c:\devkit>gem install rails --pre
