@@ -17,4 +17,4 @@ I used IntelliJ as my IDE and music by [The Sight Below](http://ghostly.com/arti
 
 I encourage you to watch the video while looking at Uncle Bob's notes in the [powerpoint presentation](http://butunclebob.com/files/downloads/Bowling%20Game%20Kata.ppt).
 
-<iframe src="http://player.vimeo.com/video/15239027?portrait=0&amp;color=ffffff" width="800" height="500" frameborder="0"></iframe>
+<div><iframe src="http://player.vimeo.com/video/15239027?portrait=0&amp;color=ffffff" width="800" height="500" frameborder="0"></iframe></div>
