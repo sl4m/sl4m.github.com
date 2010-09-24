@@ -9,7 +9,7 @@ categories:
   -- the sight below
 ---
 
-*Note:* It's better to watch the video [Vimeo website] since Vimeo does not allow HD embedding for free users.
+*Note:* It's better to watch the video on [Vimeo's website](http://vimeo.com/15239027) since Vimeo does not allow HD embedding for free users.
 
 Here is my attempt to perform [Uncle Bob's Bowling Kata in Java](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata).
 
