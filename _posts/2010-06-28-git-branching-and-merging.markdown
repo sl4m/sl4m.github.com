@@ -39,7 +39,7 @@ Here I'm going to create a branch called limelight.
 * master
 {% endhighlight %}
 
-You might be wondering what the asterisk next to the branch name means, in this case the asterisk next to "master".  It basically tells you which branch you checked out.  You might then be wondering what "checked out" means.  When you have a branch checked out, it is the active branch you are working in.  *git checkout* command allows you switch between the local branches available.  git is smart enough to understand which folder/files are in which branch, so you do not need to create separate directories for each branch.  All local branches live in the same directory!  Brilliant!
+You might be wondering what the asterisk next to the branch name means, in this case, the asterisk next to "master".  It basically tells you which branch you checked out.  You might then be wondering what "checked out" means.  When you have a branch checked out, it is the active branch you are working in.  *git checkout* command allows you to switch between the local branches available.  git is smart enough to understand which folder/files are in which branch, so you do not need to create separate directories for each branch.  All local branches live in the same directory!  Brilliant!
 
 So to check out the new branch (limelight), simply run this command:
 
