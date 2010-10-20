@@ -7,6 +7,8 @@ categories:
   -- continuous learning
 ---
 
+*Update:* My Sieve implementation is nowhere near as fast as the one posted [here](http://github.com/joshuaclayton/sieve).
+
 Four months ago, I [wrote Sieve of Eratosthenes algorithm in Ruby](http://skim.la/2010/05/09/sieve-of-eratosthenes/).  Today, I wanted to try it again with RSpec tests and a kata-like style.  You'll notice the test is inspired by Uncle Bob's kata test for [Prime Factors](http://vimeo.com/7762511).
 
 ## sieve\_spec.rb
