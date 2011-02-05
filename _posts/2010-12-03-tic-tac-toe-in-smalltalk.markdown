@@ -7,7 +7,7 @@ categories:
   -- tdd
 ---
 
-During my [apprenticeship](http://skim.cc/), I wrote a Tic Tac Toe program in Smalltalk.  Initially, I planned on using [Pharo](http://pharo-project.org/), one of the major Smalltalk implementations, but found out about [GNU Smalltalk](http://smalltalk.gnu.org/) and its POSIX compatibility, and went with that instead.  Unfortunately (or fortunately?), GNU Smalltalk does not give you the full experience of Smalltalk.  Smalltalk is about the living environment experience, not so much about the language and its syntax.  As you start reading the source code, you'll start to notice some similarities between Smalltalk and Ruby.  This is because Smalltalk was a major influence to Ruby.  This is one of the main reasons why I chose to write Tic Tac Toe in Smalltalk.
+During my [apprenticeship](http://skim.cc/), I wrote a Tic Tac Toe program in Smalltalk.  Initially, I planned on using [Pharo](http://pharo-project.org/), one of the major Smalltalk implementations, but found out about [GNU Smalltalk](http://smalltalk.gnu.org/) and its POSIX compatibility, and went with that instead.  Unfortunately (or fortunately?), GNU Smalltalk does not give you the full experience of Smalltalk.  Smalltalk is about the living environment experience, not so much about the language and its semantics.  As you start reading the source code, you'll start to notice some similarities between Smalltalk and Ruby.  This is because Smalltalk was a major influence to Ruby.  This is one of the main reasons why I chose to write Tic Tac Toe in Smalltalk.
 
 Anyway, before I go off on talking about Smalltalk history, the source code is on my GitHub [repo](https://github.com/sl4m/tic_tac_toe_smalltalk).  Here is a sample of what the code looks like:
 
