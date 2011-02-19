@@ -1,7 +1,7 @@
 ---
 layout: post
 title: jasmine on rails
-date: 2010-02-19 11:45:00 -07:00
+date: 2011-02-19 11:45:00 -07:00
 categories:
   -- javascript
   -- tdd
