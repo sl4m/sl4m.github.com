@@ -15,7 +15,7 @@ The `README.markdown` should suffice in getting you started, but let's get down 
 
 ## Requirements
 
-* Mac OS X or Linux\*
+* Mac OS X or Linux
 * GNU Smalltalk `3.2.2` or higher
 * an editor of your choice that supports Smalltalk (e.g., redcar, vim, emacs, Textmate)
 

@@ -19,7 +19,8 @@ Board subclass: ThreeByThree [
 
   ThreeByThree class >> create: existingBoard [
     ^self new
-          list: existingBoard
+          list: existingBoard;
+          yourself
   ]
 
   initialize [
