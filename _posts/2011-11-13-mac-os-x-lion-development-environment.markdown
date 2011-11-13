@@ -18,7 +18,7 @@ TL;DR
 * Lion Disk Utility detects if hard drive has too many [S.M.A.R.T.](http://en.wikipedia.org/wiki/S.M.A.R.T.) errors and simply refuses to install Lion if so
 * Had to replace hard drive (should have purchased SSD, c'est la vie)
 * XCode 4.2 is not rvm/homebrew friendly.  Have to use [XCode 4.1](https://developer.apple.com/downloads/download.action?path=Developer_Tools/xcode_4.1_for_lion/xcode_4.1_for_lion.dmg)
-* XCode 4.1 installer installs 'Install XCode.app' in your Applications folder. You then have to install 'Install XCode.app' to install XCode. Not confusing at all.
+* XCode 4.1 installer installs `Install XCode.app` in your Applications folder. You then have to install `Install XCode.app` to install XCode. Not confusing at all.
 * Homebrew does not have a vim formula (not talking about macvim). Have to compile on your own.
 
 ## Getting Ready
@@ -91,15 +91,17 @@ Git, ctags, zsh, and tmux installations were straight forward.  Homebrew is your
  not have a vim formula (and probably does not plan to).  I had to install this from scratch.  This is probably the
  long-winded process of getting it installed, but I digress:
 
-* install python via homebrew (`brew install python`)
-* download and install easy_install egg (e.g., `sh setuptools-version-number.egg`)
-* install pip via easy_install (`easy_install pip`)
-* install Mercurial via pip (`pip install Mercurial`)
-* clone vim repo (e.g., `hg clone https://vim.googlecode.com/hg/ path/to/local`)
-* cd into `path/to/local` whatever that might be
-* `./configure --enable-rubyinterp --with-features=huge --with-tlib=ncurses --enable-multibyte --enable-perlinterp --enable-pythoninterp --enable-tclinterp`
-* `make`
-* `sudo make install`
+{% highlight text %}
+brew install python
+sh setuptools-0.6c11-py2.7.egg
+easy_install pip
+pip install Mercurial
+hg clone https://vim.googlecode.com/hg/ path/to/local
+cd path/to/local
+./configure --enable-rubyinterp --with-features=huge --with-tlib=ncurses --enable-multibyte --enable-perlinterp --enable-pythoninterp --enable-tclinterp
+make
+sudo make install
+{% endhighlight %}
 
 This will install vim to `/usr/local/bin`.
 
