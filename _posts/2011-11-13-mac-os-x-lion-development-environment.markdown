@@ -88,22 +88,12 @@ I know some hate rvm and prefer rbenv, but I'm fine with it.  I installed homebr
  This confused me to no end for an hour.
 
 Git, ctags, zsh, and tmux installations were straight forward.  Homebrew is your friend.  Unfortunately though, homebrew does
- not have a vim formula (and probably does not plan to).  I had to install this from scratch.  This is probably the
- long-winded process of getting it installed, but I digress:
+ not have a vim formula (and probably does not plan to).  <strike>I had to install this from scratch.  This is probably the
+ long-winded process of getting it installed, but I digress:</strike> Update: You can brew install it.
 
 {% highlight text %}
-brew install python
-sh setuptools-0.6c11-py2.7.egg
-easy_install pip
-pip install Mercurial
-hg clone https://vim.googlecode.com/hg/ path/to/local
-cd path/to/local
-./configure --enable-rubyinterp --with-features=huge --with-tlib=ncurses --enable-multibyte --enable-perlinterp --enable-pythoninterp --enable-tclinterp
-make
-sudo make install
+brew install https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb
 {% endhighlight %}
-
-This will install vim to `/usr/local/bin`.
 
 I have been using MacVim for the past year and a half, but since this summer have been using it exclusively.  I'm taking a
  step further and switch to vim, so I can use it in tmux sessions, over ssh, etc.  I used to use AkitaOnRails'
