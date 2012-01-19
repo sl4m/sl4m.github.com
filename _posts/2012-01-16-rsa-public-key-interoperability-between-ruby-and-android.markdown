@@ -163,4 +163,4 @@ If SpongyCastle is too heavy for your needs, you can probably use something like
 
 ## Conclusion
 
-This is definitely a unique cryptography issue between Ruby and Android.  As far as I know, there are no plans to backport the `Ruby 1.9.3` fix into prior Ruby versions, but the solutions I have presented should be sufficient for your needs to make public keys interoperable between Ruby and Android.  Feel free to comment if you have any questions or different solutions to this problem.
+This is definitely a unique cryptography issue between Ruby and Android.  As far as I know, the Ruby team has no plans to backport the `Ruby 1.9.3` fix into prior Ruby versions, but the solutions I have presented should be sufficient for your needs to make public keys interoperable between Ruby and Android.  Feel free to comment if you have any questions or different solutions to this problem.
