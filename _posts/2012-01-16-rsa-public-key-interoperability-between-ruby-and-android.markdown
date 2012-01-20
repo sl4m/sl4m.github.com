@@ -111,7 +111,7 @@ pem = "-----BEGIN PUBLIC KEY-----\n#{base64}-----END PUBLIC KEY-----"
 
 Martin basically wrote the X.509 encoding format from scratch.  This would have worked for us, but unfortunately, we have already issued RSA public keys to customers and needed to support the PKCS#1 encoded format public keys.
 
-I googled some more and found a [solution](http://stackoverflow.com/a/4033421) that extracts the [exponent and modulus](http://en.wikipedia.org/wiki/RSA_(algorithm)#Key_generation) from the public key.  With the exponent and modulus, I can create a PublicKey object.
+I googled some more and found a [solution](http://stackoverflow.com/a/4033421) that extracts the [exponent and modulus][rsa-algorithm] from the public key.  With the exponent and modulus, I can create a PublicKey object.
 
 ## Solution #2: SpongyCastle and RSAPublicKeyStructure ([gist](https://gist.github.com/1617144))
 
@@ -164,3 +164,5 @@ If SpongyCastle is too heavy for your needs, you can probably use something like
 ## Conclusion
 
 This is definitely a unique cryptography issue between Ruby and Android.  As far as I know, the Ruby team has no plans to backport the `Ruby 1.9.3` fix into prior Ruby versions, but the solutions I have presented should be sufficient for your needs to make public keys interoperable between Ruby and Android.  Feel free to comment if you have any questions or different solutions to this problem.
+
+[rsa-algorithm]: http://en.wikipedia.org/wiki/RSA_(algorithm)#Key_generation
