@@ -75,7 +75,7 @@ public_key = "MIIBCgKCAQEA20O377QEiZvPsj14LKl2xO23iirJB5WDTVjeab1cIOJu1vbV+Pdwl1
 rsa_public_key = OpenSSL::PKey::RSA.new(Base64.decode64(public_key))
 
 # strip newlines and begin/end markers
-new_public_key rsa_public_key.to_s.gsub("\n", "").gsub(/-----(BEGIN|END) PUBLIC KEY-----/, "")
+new_public_key = rsa_public_key.to_s.gsub("\n", "").gsub(/-----(BEGIN|END) PUBLIC KEY-----/, "")
 # => "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA20O377QEiZvPsj14LKl2xO23iirJB5WDTVjeab1cIOJu1vbV+Pdwl1Bov8m896ZG4K0S/qvfJcdHLovr2WJ+o2maK1XZCNy8lAzIPzZrj/yDZAB2GSjR3in1lQRQPtWjIOdB8Cy2FGybEstIkpf8MD3XMWp5g8BtdOv43ekjBuTiGGLlPRG0+IiazjHlWjyl6DU9x9m2Jxks0H6YZud6zf4s9Q69vPUYgOZXWs7IghxqrVGE5mWxoRudsDFhLYP706+IrSxGOf5fE0/8fjtzj/eJayCLmkUWq/xsts5tBAbwsX5xKdk8iD0OU2qOEbVuiYmehEiJnvO2vyd+t76CxwIDAQAB"
 
 new_public_key == public_key
