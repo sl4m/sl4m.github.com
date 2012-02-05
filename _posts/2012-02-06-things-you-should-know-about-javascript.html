@@ -1,0 +1,330 @@
+---
+layout: post
+title: things you should know about javascript
+date: 2012-02-06 10:00:00 -05:00
+tag: javaScript
+---
+
+<h2>
+  I know some people cringe at the idea of writing JavaScript.
+  They opt to write CoffeeScript instead and make every attempt
+  to avoid looking at those funny looking mustaches.
+</h2>
+<p>
+  It is however, advantageous to learn JavaScript and learn the
+  advanced features, even the odd things about the language.
+  Here’s a collection of things you should know:
+</p>
+<ol>
+  <li>
+    <p><b>Short-hand syntax for creating Arrays and Objects</b></p>
+    <p>
+      Prefer to use <code>[]</code> for arrays and <code>{}</code>
+      for objects instead of <code>new Array()</code> and <code>new Object()</code>.
+    </p>
+    <p>
+      Other than being syntactically shorter, particularly
+      <code>new Array()</code> yields different results depending on the
+      arguments you provide.
+    </p>
+    <p>
+      Passing a single <code>Number</code> argument will change the
+      length of the array after instantiation.
+    </p>
+    <p>
+      {% highlight javascript %}
+      var array = new Array(2);
+      array.length;  // 2
+      {% endhighlight %}
+    </p>
+    <p>
+      I’m not sure why you would do this because arrays in
+      JavaScript are dynamic.  Passing in a single argument
+      that is not a <code>Number</code> or passing more than one argument
+      will instantiate the array with the arguments provided.
+    </p>
+    <p>
+      {% highlight javascript %}
+      var array1 = new Array(true);
+      array1;  // [true]
+
+      var array2 = new Array(1, "a", {});
+      array2;  // [1, "a", {}]
+      {% endhighlight %}
+    </p>
+    <p>
+      Objects are easier to build when using the short-hand syntax.
+    </p>
+    <p>
+      {% highlight javascript %}
+      var object1 = { key1 : 'value1', key2 : 'value2' };
+
+      var object2 = new Object();
+      var object.key1 = 'value1';
+      var object.key2 = 'value2';
+      {% endhighlight %}
+    </p>
+  </li>
+  <li>
+    <p><b>dot notation vs. subscript notation (bracket notation)</b></p>
+    <p>
+      You can call properties/methods using dot notation or subscript notation.
+    </p>
+    <p>
+      {% highlight javascript %}
+      var object = {
+        value : 42,
+        fn : function() {
+          return "hello world";
+        }
+      }
+
+      object.value;  // 42
+      object["value"];  // 42
+      object.fn();  // "hello world"
+      object["fn"]()  // "hello world"
+      {% endhighlight %}
+    </p>
+    <p>
+      You might ask why you'd ever want to use subscript notation.
+      Subscript notation allows for dynamic creation of properties and methods.
+      So if you ever do any sort of metaprogramming, you'll most likely be
+      using the subscript notation.
+    </p>
+  </li>
+  <li>
+    <p><b>=== and !===</b></p>
+    <p>
+      CoffeeScript has this right.  Prefer <code>===</code> and <code>!==</code>
+      over <code>==</code> and <code>!=</code>.  The reason for this is due to
+      type coercion when using the equality operator.
+    </p>
+    <p>
+      {% highlight javascript %}
+      "0" == 0;  // true
+      "0" == false;  // true
+      undefined == null;  // true
+      " \t\r\n" == 0;  // true
+      {% endhighlight %}
+    </p>
+    <p>
+      JavaScript considers <code>0</code> and <code>""</code> to be falsy unlike Ruby.
+      If the strict equality operator (<code>===</code>) was used in the above examples,
+      they would all return false.
+    </p>
+  </li>
+  <li>
+    <p><b>Function Scope, The Only Scope</b></p>
+    <p>
+      {% highlight javascript %}
+      if (true) {
+        var SomeObject = {};
+      }
+      {% endhighlight %}
+    </p>
+    <p>
+      What is the value of <code>SomeObject</code> outside of the <code>if</code> statement?
+      Is it <code>undefined</code>?  Or <code>{}</code>?
+    </p>
+    <p>
+      Believe it or not, code wrapped in m̶u̶s̶t̶a̶c̶h̶e̶s̶ <b>curly braces</b>
+      does not have scope.  Only functions create scope.  Therefore,
+      <code>SomeObject</code> is <code>{}</code>.
+    </p>
+    <p>
+      {% highlight javascript %}
+      function a() {
+        var b = 1;
+      }
+
+      a();
+      b;  // ReferenceError
+      {% endhighlight %}
+    </p>
+  </li>
+  <li>
+    <p><b>Hoisting</b></p>
+    <p>
+      {% highlight javascript %}
+      if (!SomeObject) {
+        var SomeObject = {};
+      }
+      {% endhighlight %}
+    </p>
+    <p>
+      For this example, what is the value of <code>SomeObject</code>?
+      Is it <code>undefined</code>?  Or <code>{}</code>?  Or some <code>Error</code>?
+      This is probably one of the most interesting parts of JavaScript.  Right
+      before the code is executed, all variable declarations are
+      <i>hoisted</i> to the top of the given scope.  The example above
+      turns into this before execution:
+    </p>
+    <p>
+      {% highlight javascript %}
+      var SomeObject;
+
+      if (!SomeObject) {
+        SomeObject = {};
+      }
+      {% endhighlight %}
+    </p>
+    <p>
+      So, the value of <code>SomeObject</code> is <code>{}</code>.  Similarly, function
+      declarations are <i>hoisted</i> to the top as well.  This example:
+    </p>
+    <p>
+      {% highlight javascript %}
+      abracadabra();
+      function abracadabra() {
+        var magic = "it works!";
+      }
+      {% endhighlight %}
+    </p>
+    <p>
+      works because it looks like this before execution:
+    </p>
+    <p>
+      {% highlight javascript %}
+      function abracadabra() {
+        var magic = "it works!";
+      }
+      abracadabra();
+      {% endhighlight %}
+    </p>
+    <p>
+      It's magic!
+    </p>
+  </li>
+  <li>
+    <p><b>Casting Values</b></p>
+    <p>
+      There are several ways to cast a primitive value.
+      The simplest way is to use the <code>String</code>, <code>Number</code>,
+      <code>Boolean</code> functions:
+    </p>
+    <p>
+      {% highlight javascript %}
+      String(42);  // "42"
+      Number("42");  // 42
+      Boolean("true");  // true
+      {% endhighlight %}
+    </p>
+    <p>
+      Cool kids like to use this approach, which works the same way:
+    </p>
+    <p>
+      {% highlight javascript %}
+      // cast string to number using the plus operator
+      +"42";  // 42
+
+      // cast number to string using an empty string and coercion
+      "" + 42;  // "42"
+      {% endhighlight %}
+    </p>
+  </li>
+  <li>
+    <p><b>Using Number methods on Number literals</b></p>
+    <p>
+      Ever wondered why you can call <code>String</code> methods on <code>String</code>
+      literals, but not <code>Numbers</code>?
+    </p>
+    <p>
+      {% highlight javascript %}
+      "1 2 3".split(" ");  // ["1", "2", "3"]
+
+      2.toFixed();  // SyntaxError
+      {% endhighlight %}
+    </p>
+    <p>
+      According to the JavaScript Garden documentation, it's
+      because <i>a flaw in JavaScript's parser tries to parse
+      the dot notation on a number as a floating point literal</i>.
+      The best way to handle this issue is to wrap the <code>Number</code>
+      literal in parentheses.
+    </p>
+    <p>
+      {% highlight javascript %}
+      (2).toFixed();  // "2"
+      {% endhighlight %}
+    </p>
+  </li>
+  <li>
+    <p><b>arguments object is not an Array</b></p>
+    <p>
+      The <code>arguments</code> object has a <code>length</code> property, but
+      it is not an <code>Array</code>.  Therefore, you cannot
+      directly call <code>Array</code> methods from the <code>arguments</code>
+      object.  The best way to do this is to use <code>call</code>
+      or <code>apply</code>.
+    </p>
+    <p>
+      {% highlight javascript %}
+      Array.prototype.shift.call(arguments);
+      {% endhighlight %}
+    </p>
+  </li>
+  <li>
+    <p><b>Privatizing variables</b></p>
+    <p>
+      With closure, you can create privatized variables
+      in JavaScript.
+    </p>
+    <p>
+      {% highlight javascript %}
+      var fn = (function() {
+        var privatizedVariable = "private";
+        return function() {
+          return privatizedVariable;
+        };
+      })();
+
+      fn();  // "private"
+      {% endhighlight %}
+    </p>
+  </li>
+</ol>
+<p>
+  There are a ton more advanced features that everyone
+  should know that are outside the scope of this post
+  (or my lack of explaining it better than the
+  books/articles out there):
+</p>
+<ol>
+  <li>Prototypal inheritance</li>
+  <li>call and apply</li>
+  <li>function expressions vs. function declarations vs. named function expressions</li>
+  <li>Name Resolution Order</li>
+</ol>
+<p>
+  You can read more about them below.
+</p>
+<p>
+  Master your JavaScript-Fu.  Enjoy.
+</p>
+<h3>Reference</h3>
+<ol>
+  <li>
+    <a href="http://bonsaiden.github.com/JavaScript-Garden/">JavaScript Garden</a>
+  </li>
+  <li>
+    <a href="http://shichuan.github.com/javascript-patterns/">JavaScript Patterns</a>
+  </li>
+  <li>
+    <a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting">JavaScript Scoping and Hoisting</a>
+  </li>
+  <li>
+    <a href="http://dmitry.baranovskiy.com/post/91403200">Dmitry's JavaScript Quiz</a>
+  </li>
+  <li>
+    <a href="http://perfectionkills.com/javascript-quiz/">Kangax's JavaScript Quiz</a>
+  </li>
+  <li>
+    <a href="http://kangax.github.com/nfe/">Named Function Expressions Demystified</a>
+  </li>
+  <li>
+    Douglas Crockford's JavaScript: The Good Parts
+  </li>
+  <li>
+    <a href="http://blog.caplin.com/2012/01/27/the-why-of-wat/">Why of WAT</a>
+  </li>
+</ol>
