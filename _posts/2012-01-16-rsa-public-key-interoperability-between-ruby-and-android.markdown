@@ -15,8 +15,7 @@ TL;DR
 Solutions to this problem:
 
 * On the server side, encode pre-Ruby 1.9.3 RSA public keys using the X.509 format -- [gist](https://gist.github.com/1470360) (thanks [Martin](http://twitter.com/!#/_emboss_)!).
-* Android Standard Library comes with a crippled version of BouncyCastle.  Use [SpongyCastle](https://github.com/rtyley/spongycastle) to bring in classes needed to extract the exponent and modulus of the PKCS#1 encoded public key to create a PublicKey object -- [gist](https://gist.github.com/1617144).
-* If SpongyCastle is too heavy for your needs, use a tool like [Jar Jar Links](http://code.google.com/p/jarjar/) to extract the necessary classes into a custom jar.
+* Android Standard Library comes with a crippled version of BouncyCastle.  Grab the full version of [BouncyCastle](http://www.bouncycastle.org/java.html) and grab the classes necessary to extract the exponent and modulus of the PKCS#1 encoded public key to create a PublicKey object -- [gist](https://gist.github.com/1617144).
 
 ## RSA Public Key Encoded Format Problem in pre-Ruby 1.9.3
 
@@ -113,14 +112,11 @@ Martin basically wrote the X.509 encoding format from scratch.  This would have 
 
 I googled some more and found a [solution](http://stackoverflow.com/a/4033421) that extracts the [exponent and modulus][rsa-algorithm] from the public key.  With the exponent and modulus, I can create a PublicKey object.
 
-## Solution #2: SpongyCastle and RSAPublicKeyStructure ([gist](https://gist.github.com/1617144))
+## Solution #2: Full Version of BouncyCastle and RSAPublicKeyStructure ([gist](https://gist.github.com/1617144))
 
-This solution requires libraries that are not available in the Android Standard Library.  A Google [result](http://code.google.com/p/android/issues/detail?id=3280) provides details about the problem with the Android Standard Library's crippled version of BouncyCastle.  This prompted someone to create [SpongyCastle](https://github.com/rtyley/spongycastle): a repackage of BouncyCastle to be used in Android.  SpongyCastle basically does two things:
+This solution requires classes that are not available in the Android Standard Library.  A Google [result](http://code.google.com/p/android/issues/detail?id=3280) provides details about the problem with the Android Standard Library's crippled version of BouncyCastle.  To remedy this problem, grab the full version of BouncyCastle and bring in only the required classes to extract the exponent and modulus of the public key string.
 
-* moved all package names from org.bouncycastle.* to org.spongycastle.* to avoid classloader conflicts with the existing BouncyCastle in the Android Standard Library.
-* named the Java Security Provider to SC (BouncyCastle is BC).
-
-After adding SpongyCastle to the build path, I created a static method that reads pre-Ruby 1.9.3 public keys, extracts the exponent and modulus, and returns a PublicKey object:
+After adding BouncyCastle classes, I created a static method that reads pre-Ruby 1.9.3 public keys, extracts the exponent and modulus, and returns a PublicKey object:
 
 {% highlight java %}
 import java.io.IOException;
@@ -130,10 +126,10 @@ import java.security.PublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.RSAPublicKeySpec;
 
-import org.spongycastle.asn1.ASN1InputStream;
-import org.spongycastle.asn1.DERObject;
-import org.spongycastle.asn1.x509.RSAPublicKeyStructure;
-import org.spongycastle.util.encoders.Base64;
+import org.bouncycastle.asn1.ASN1InputStream;
+import org.bouncycastle.asn1.DERObject;
+import org.bouncycastle.asn1.x509.RSAPublicKeyStructure;
+import org.bouncycastle.util.encoders.Base64;
 
 public class RSAUtil {
     static public PublicKey publicKey(String publicKeyString) {
@@ -156,10 +152,6 @@ public class RSAUtil {
     }
 }
 {% endhighlight %}
-
-## Solution #3: Jar Jar Links and RSAPublicKeyStructure
-
-If SpongyCastle is too heavy for your needs, you can probably use something like [Jar Jar Links](http://code.google.com/p/jarjar/) to extract the classes that are needed to make Solution #2 work.  You may still experience namespace conflicts with the existing BouncyCastle library in the Android Standard Library.  We may go this route in the future, but in the meantime have resorted to using SpongyCastle as it also supports Base64 (Android Standard Library introduced Base64 in API level 8).
 
 ## Conclusion
 
