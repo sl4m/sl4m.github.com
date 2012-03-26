@@ -1,0 +1,21 @@
+---
+layout: post
+title: pertext - a chrome extension
+date: 2012-03-25 23:00:00 -05:00
+tag: javascript
+---
+
+[pertext](https://github.com/sl4m/pertext) is a [PERT](http://en.wikipedia.org/wiki/Program_Evaluation_and_Review_Technique) estimation tool as a Chrome extension.
+
+This was pulled from my ideas list and the main motivation was to learn how to create Chrome extensions.  What I found out from this
+little exercise is that a Chrome extension is nothing more than just HTML, CSS, and JavaScript packaged together in `crx` file.
+It's basically like a static-based website living in your browser.  You can have it call out to a server, read data from each
+browser tab, etc.  pertext is just a simple calculator, so everything is localized.
+
+Check out the source code on [GitHub](https://github.com/pertext) and try it out by visiting the
+[Chrome Web Store](https://chrome.google.com/webstore/detail/jbbmfopbiibcgfedhckafpgbpmagljjh).  I've written unit
+tests for the PERT library using Jasmine, created Rake tasks to essentially package the extension for testing and deployment
+(modeled off of this [Rakefile](https://github.com/braintree/braintree_client_side_encryption/blob/master/Rakefile), and used
+Braintree's [git workflow](http://www.braintreepayments.com/devblog/our-git-workflow) with bitbucket as the acting private repo.
+
+All in all, this was a fun little exercise and I look forward to creating another Chrome extension soon.
