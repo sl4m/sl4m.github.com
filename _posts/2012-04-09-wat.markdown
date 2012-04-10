@@ -1,0 +1,30 @@
+---
+layout: post
+title: wat - a chrome extension
+date: 2012-04-09 21:00:00 -05:00
+tag: javascript
+---
+
+I created another [Chrome extension](https://chrome.google.com/webstore/detail/ilplnmjooojahcdghggbaaeddjmopccl).  This is inspired by Gary Bernhardt's [wat](https://www.destroyallsoftware.com/talks/wat) talk and the [watbutton.com](http://watbutton.com/) site.
+
+I wanted to see if it was possible to take the watbutton and turn it into a localized, on-the-ready button in your Chrome browser.  The first Chrome extension I created displayed a small pop-up when clicking the Chrome extension icon.  The part I didn't quite understand was if it was possible to have the Chrome extension icon execute JavaScript in a hidden DOM when clicked.
+
+After some digging in the docs and examples, I found that this is indeed possible using a background page.  In your `manifest.json`, you define an html page like so:
+
+{% highlight javascript %}
+{
+  "background" : {
+    "page" : "background.html"
+  }
+}
+{% endhighlight %}
+
+When you start the Chrome extension in your browser, it creates a long-running process in the background and loads up the `background.html` page.  You configure the page like any other page.  I loaded up the JavaScript and referenced a couple of audio files using the HTML5 audio tag.  The most important bit is in the JavaScript file.
+
+{% highlight javascript %}
+chrome.browserAction.onClicked.addListener(playWat);
+{% endhighlight %}
+
+This adds a listener to the Chrome extension icon, so when it's clicked, it plays wat.
+
+The Chrome extension is available on the webstore [here](https://chrome.google.com/webstore/detail/ilplnmjooojahcdghggbaaeddjmopccl).  You can check out the source code on [GitHub](https://github.com/sl4m/wat).
