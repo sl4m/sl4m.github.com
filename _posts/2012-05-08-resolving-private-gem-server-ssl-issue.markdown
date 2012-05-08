@@ -1,6 +1,6 @@
 ---
 layout: post
-title: private ruby gem server ssl issue workaround
+title: resolving private gem server ssl issue
 date: 2012-05-08 18:00:00 -05:00
 tag: ruby
 ---
