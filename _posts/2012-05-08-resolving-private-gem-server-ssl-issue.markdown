@@ -5,7 +5,7 @@ date: 2012-05-08 18:00:00 -05:00
 tag: ruby
 ---
 
-Update: This has been fixed on RubyGems 1.8.24.  See Issue [#320](https://github.com/rubygems/rubygems/issues/320).
+__Update:__ This has been fixed on RubyGems 1.8.24.  See Issue [#320](https://github.com/rubygems/rubygems/issues/320).
 
 If you've been following the Ruby news, the Ruby core team [recently](http://www.ruby-lang.org/en/news/2012/04/20/ruby-1-9-3-p194-is-released/) [released](http://www.ruby-lang.org/en/news/2012/04/21/ruby-1-9-2-p320-is-released/) security fixes for RubyGems.  The fixes were:
 
