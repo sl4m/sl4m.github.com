@@ -1,6 +1,6 @@
 ---
 layout: post
-title: tic tac toe in ruby - refactoring part 2 
+title: tic tac toe in ruby - refactoring part 2
 date: 2010-06-13 23:00:00 -05:00
 categories:
   -- ruby

@@ -16,7 +16,7 @@ I was asked to write the ancient algorithm in Ruby.  Here is the code.
 {% highlight ruby %}
 class Sieve
   attr_reader :prime_numbers
-  
+
   def initialize(number)
     @number = number.to_i
     @prime_numbers = (2..@number).to_a

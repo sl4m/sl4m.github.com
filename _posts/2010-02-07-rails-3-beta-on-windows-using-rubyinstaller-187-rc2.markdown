@@ -46,7 +46,7 @@ Due to a rubygems bug, you must uninstall all older versions of bundler for 0.9 
 Successfully installed bundler-0.9.3
 Successfully installed i18n-0.3.3
 Successfully installed rake-0.8.7
-17 gems installed  
+17 gems installed
 
 C:\Users\skim>gem install rails --pre --no-ri --no-rdoc
 Successfully installed activesupport-3.0.0.beta

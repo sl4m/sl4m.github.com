@@ -79,7 +79,7 @@ def score(dice)
   total = 0
   rolls = dice.dup
   return total if rolls.size == 0
-  (1..6).each do |i| 
+  (1..6).each do |i|
     if rolls.count(i) >= 3
       3.times do
         rolls.delete_at(rolls.index(i))

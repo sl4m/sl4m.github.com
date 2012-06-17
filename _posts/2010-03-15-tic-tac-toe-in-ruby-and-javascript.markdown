@@ -16,7 +16,7 @@ categories:
 ## The Challenge
 
 I was "challenged" by someone last week to build a tic tac toe game that should consist of the following:
-  
+
 * human vs. computer
 * some form of user interface (text-based is ok)
 * computer can never lose, only draw
@@ -43,7 +43,7 @@ I was at a loss.  I think it was easy for my friend since he thinks in RL, but I
 
 class TicTacToe
   module Patterns
-    Winning = 
+    Winning =
       [[(/ OO....../),0],[(/O..O.. ../),6],
        [(/......OO /),8],[(/.. ..O..O/),2],
        [(/ ..O..O../),0],[(/...... OO/),6],
@@ -54,7 +54,7 @@ class TicTacToe
        [(/......O O/),7],[(/..O.. ..O/),5],
        [(/. ..O..O./),1],[(/... OO.../),3],
        [(/.O..O.. ./),7],[(/...OO .../),5]]
-    Blocking = 
+    Blocking =
       [[(/  X . X  /),1],[(/ XX....../),0],[(/X..X.. ../),6],
        [(/......XX /),8],[(/.. ..X..X/),2],[(/ ..X..X../),0],
        [(/...... XX/),6],[(/..X..X.. /),8],[(/XX ....../),2],
@@ -66,7 +66,7 @@ class TicTacToe
        [(/ X ..X.. /),2],[(/  XX.. ../),0],[(/X.. .. X /),6],
        [(/.. .XX   /),8],[(/X  ..X.. /),2],[(/ X  ..X../),0],
        [(/ ..X..  X/),6],[(/..X..  X /),8],[(/X  ..X.. /),2]]
-    Won = 
+    Won =
       [[(/OOO....../),:O], [(/...OOO.../),:O],
        [(/......OOO/),:O], [(/O..O..O../),:O],
        [(/.O..O..O./),:O], [(/..O..O..O/),:O],
@@ -74,15 +74,15 @@ class TicTacToe
        [(/XXX....../),:X], [(/...XXX.../),:X],
        [(/......XXX/),:X], [(/X..X..X../),:X],
        [(/.X..X..X./),:X], [(/..X..X..X/),:X],
-       [(/X...X...X/),:X], [(/..X.X.X../),:X]] 
+       [(/X...X...X/),:X], [(/..X.X.X../),:X]]
   end
-  
+
   def initialize
     @board = [].fill(0, 9) { " " }
     @players = { :X => 'X', :O => 'O' }
     @turn = :X
   end
-  
+
   def play
     winner_flag = false
     9.times do
@@ -91,7 +91,7 @@ class TicTacToe
         player_move
       else
         cpu_move
-      end				
+      end
       winner = someone_win?
       unless winner.nil?
         display
@@ -104,9 +104,9 @@ class TicTacToe
     if (!winner_flag)
       display
       print "\nGame is a draw.\n"
-    end	
+    end
   end
-  
+
   private
   def player_move
     print "Enter your move [0-8]: "
@@ -123,7 +123,7 @@ class TicTacToe
     end
     move move_pos, 'X'
   end
-  
+
   def cpu_move
     move_pos = get_winning_pattern_move
     if move_pos.nil?
@@ -134,17 +134,17 @@ class TicTacToe
     end
     move move_pos, 'O'
   end
-  
+
   def move(pos, piece)
     @board.delete_at(pos)
     @board.insert(pos, piece)
   end
-  
+
   def display
     print "\n\n"
     print " #{@board[0]} |"
     print " #{@board[1]} |"
-    print " #{@board[2]}"		
+    print " #{@board[2]}"
     print "\n---+---+---\n"
     print " #{@board[3]} |"
     print " #{@board[4]} |"
@@ -155,7 +155,7 @@ class TicTacToe
     print " #{@board[8]}"
     print "\n\n"
   end
-  
+
   def someone_win?
     symbol = nil
     array = Patterns::Won.find { |p| p.first =~ @board.join }
@@ -163,8 +163,8 @@ class TicTacToe
       symbol = (array.last === :X) ? 'X' : 'O'
     end
     symbol
-  end		
-  
+  end
+
   def get_winning_pattern_move
     move_pos = nil
     array = Patterns::Winning.find { |p| p.first =~ @board.join }
@@ -173,7 +173,7 @@ class TicTacToe
     end
     move_pos
   end
-  
+
   def get_blocking_pattern_move
     move_pos = nil
     array = Patterns::Blocking.find { |p| p.first =~ @board.join }
@@ -182,7 +182,7 @@ class TicTacToe
     end
     move_pos
   end
-  
+
   def get_first_available_move
     if @board.at(4) == ' '
       move_pos = 4

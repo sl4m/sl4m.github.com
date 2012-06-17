@@ -15,7 +15,7 @@ This week the Ruby team [released](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/
 
 ## Requirements
 
-* [RubyInstaller 1.9.2-p0](http://rubyforge.org/frs/download.php/72170/rubyinstaller-1.9.2-p0.exe) 
+* [RubyInstaller 1.9.2-p0](http://rubyforge.org/frs/download.php/72170/rubyinstaller-1.9.2-p0.exe)
 * [DevKit-4.5.0-20100819-1536-sfx.exe](http://github.com/downloads/oneclick/rubyinstaller/DevKit-4.5.0-20100819-1536-sfx.exe)
 * SQLite3 or MySQL
 

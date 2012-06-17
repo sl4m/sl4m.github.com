@@ -139,7 +139,7 @@ em {
   padding: 5px 5px 3px 5px;
   background-color: #F9F9F9;
   -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;  
+  -moz-border-radius: 7px;
   border: 1px solid #A5A5A5;
 }
 table {
@@ -149,7 +149,7 @@ table {
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
 	border-radius:10px
-}	
+}
 table th {padding:4px 10px}
 table td {
 	background:#fff;

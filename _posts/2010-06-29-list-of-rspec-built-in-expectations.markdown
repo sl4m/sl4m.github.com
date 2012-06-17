@@ -12,7 +12,7 @@ Here's the list of RSpec Built-in expectations straight off of David Chelimsky's
 {% highlight text %}
 actual.should equal(expected)
 actual.should eql(expected)
-actual.should == expected 
+actual.should == expected
 
 actual.should_not equal(expected)
 actual.should_not eql(expected)

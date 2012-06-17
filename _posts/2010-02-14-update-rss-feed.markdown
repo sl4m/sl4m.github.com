@@ -6,6 +6,6 @@ categories:
   -- rss
 ---
 
-I've updated the rss feed to use FeedBurner.  
+I've updated the rss feed to use FeedBurner.
 
 Please point to the new feed : [http://feeds.feedburner.com/sl4m](http://feeds.feedburner.com/sl4m)

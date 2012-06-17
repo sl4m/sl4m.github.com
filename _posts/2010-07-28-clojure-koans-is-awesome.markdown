@@ -25,7 +25,7 @@ remote: Compressing objects: 100% (210/210), done.
 remote: Total 487 (delta 264), reused 487 (delta 264)
 Receiving objects: 100% (487/487), 60.71 KiB, done.
 Resolving deltas: 100% (264/264), done.
-[~/local/git] cd clojure-koans 
+[~/local/git] cd clojure-koans
 [master][~/local/git/clojure-koans]
 {% endhighlight %}
 
@@ -142,7 +142,7 @@ expected: (= __ true)
 Great!  If you read through the error message, you'll see there's something wrong in the equalities.clj file.  All files live in the src/koans directory.  Open it up, fix the tests and re-run the previous command.  For the sake of showing you an example, I fixed the first test:
 
 {% highlight text %}
-[master][~/local/git/clojure-koans] cat src/koans/equalities.clj 
+[master][~/local/git/clojure-koans] cat src/koans/equalities.clj
 (meditations
   "We shall contemplate truth by testing reality, via equality."
   (= true true)

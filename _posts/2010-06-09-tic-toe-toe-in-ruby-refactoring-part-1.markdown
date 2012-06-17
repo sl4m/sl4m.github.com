@@ -1,6 +1,6 @@
 ---
 layout: post
-title: tic tac toe in ruby - refactoring part 1 
+title: tic tac toe in ruby - refactoring part 1
 date: 2010-06-09 16:00:00 -05:00
 categories:
   -- ruby
@@ -21,7 +21,7 @@ One of the many refactoring techniques I can apply to my smelly Tic Tac Toe code
 
 class TicTacToe
   module Patterns
-    Winning = 
+    Winning =
       [[(/ OO....../),0],[(/O..O.. ../),6],
        [(/......OO /),8],[(/.. ..O..O/),2],
        [(/ ..O..O../),0],[(/...... OO/),6],
@@ -32,7 +32,7 @@ class TicTacToe
        [(/......O O/),7],[(/..O.. ..O/),5],
        [(/. ..O..O./),1],[(/... OO.../),3],
        [(/.O..O.. ./),7],[(/...OO .../),5]]
-    Blocking = 
+    Blocking =
       [[(/  X . X  /),1],[(/ XX....../),0],[(/X..X.. ../),6],
        [(/......XX /),8],[(/.. ..X..X/),2],[(/ ..X..X../),0],
        [(/...... XX/),6],[(/..X..X.. /),8],[(/XX ....../),2],
@@ -45,10 +45,10 @@ class TicTacToe
        [(/.. .XX   /),8],[(/X  ..X.. /),2],[(/ X  ..X../),0],
        [(/ ..X..  X/),6],[(/..X..  X /),8],[(/X  ..X.. /),2]]
   end
- 
+
   class Board
     module Pattern
-      Won = 
+      Won =
         [[(/OOO....../),:O], [(/...OOO.../),:O],
          [(/......OOO/),:O], [(/O..O..O../),:O],
          [(/.O..O..O./),:O], [(/..O..O..O/),:O],
@@ -58,7 +58,7 @@ class TicTacToe
          [(/.X..X..X./),:X], [(/..X..X..X/),:X],
          [(/X...X...X/),:X], [(/..X.X.X../),:X]]
     end
-    
+
     attr_reader :board
     attr_reader :winner
 
@@ -88,7 +88,7 @@ class TicTacToe
       print "\n\n"
       print " #{@board[0]} |"
       print " #{@board[1]} |"
-      print " #{@board[2]}"		
+      print " #{@board[2]}"
       print "\n---+---+---\n"
       print " #{@board[3]} |"
       print " #{@board[4]} |"
@@ -115,7 +115,7 @@ class TicTacToe
     @players = { :X => 'X', :O => 'O' }
     @turn = :X
   end
-  
+
   def play
     winner_flag = false
     9.times do
@@ -124,7 +124,7 @@ class TicTacToe
         player_move
       else
         cpu_move
-      end				
+      end
       if @board.someone_win?
         @board.display
         print "\n#{@board.winner} is the winner!\n"
@@ -136,9 +136,9 @@ class TicTacToe
     if (!winner_flag)
       @board.display
       print "\nGame is a draw.\n"
-    end	
+    end
   end
-  
+
   private
   def player_move
     print "Enter your move [0-8]: "
@@ -155,7 +155,7 @@ class TicTacToe
     end
     @board.move(move_pos, 'X')
   end
-  
+
   def cpu_move
     move_pos = get_winning_pattern_move
     if move_pos.nil?
@@ -166,7 +166,7 @@ class TicTacToe
     end
     @board.move(move_pos, 'O')
   end
-  
+
   def get_winning_pattern_move
     move_pos = nil
     array = Patterns::Winning.find { |p| p.first =~ @board.board.join }
@@ -175,7 +175,7 @@ class TicTacToe
     end
     move_pos
   end
-  
+
   def get_blocking_pattern_move
     move_pos = nil
     array = Patterns::Blocking.find { |p| p.first =~ @board.board.join }
@@ -184,9 +184,9 @@ class TicTacToe
     end
     move_pos
   end
-  
+
   def get_first_available_move
-    if !@board.occupied?(4) 
+    if !@board.occupied?(4)
       move_pos = 4
     else
       move_pos = @board.board.index(' ')
