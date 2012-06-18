@@ -9,7 +9,7 @@ categories:
 
 Here's the list of RSpec Built-in expectations straight off of David Chelimsky's [RSpec](http://www.pragprog.com/titles/achbd/the-rspec-book) book.
 
-{% highlight text %}
+<pre><code class="no-highlight">
 actual.should equal(expected)
 actual.should eql(expected)
 actual.should == expected
@@ -40,8 +40,8 @@ actual.should =~ expected
 actual.should_not match(expected)
 actual.should_not =~ expected
 
-actual.should be < expected
-actual.should be <= expected
+actual.should be &lt; expected
+actual.should be &lt;= expected
 actual.should be >= expected
 actual.should be > expected
 
@@ -78,4 +78,4 @@ actual.should_not respond_to(*messages)
 actual.should satisfy { |actual| block }
 
 actual.should_not satisfy { |actual| block }
-{% endhighlight %}
+</code></pre>

@@ -11,19 +11,19 @@ I wanted to see if it was possible to take the watbutton and turn it into a loca
 
 After some digging in the docs and examples, I found that this is indeed possible using a background page.  In your `manifest.json`, you define an html page like so:
 
-{% highlight javascript %}
+<pre><code class="json">
 {
   "background" : {
     "page" : "background.html"
   }
 }
-{% endhighlight %}
+</code></pre>
 
 When you start the Chrome extension in your browser, it creates a long-running process in the background and loads up the `background.html` page.  You configure the page like any other page.  I loaded up the JavaScript and referenced a couple of audio files using the HTML5 audio tag.  The most important bit is in the JavaScript file.
 
-{% highlight javascript %}
+<pre><code class="javascript">
 chrome.browserAction.onClicked.addListener(playWat);
-{% endhighlight %}
+</code></pre>
 
 This adds a listener to the Chrome extension icon, so when it's clicked, it plays wat.
 

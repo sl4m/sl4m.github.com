@@ -20,7 +20,7 @@ The README.rdoc at Ruby Koans [GitHub repo](http://github.com/edgecase/ruby_koan
 
 Basically, do a git clone on the Ruby Koans repo (or download zip [file](http://github.com/downloads/edgecase/ruby_koans/rubykoans.zip)):
 
-{% highlight text %}
+<pre><code class="no-highlight">
 git clone git://github.com/edgecase/ruby_koans.git
 Initialized empty Git repository in E:/p/git/fake/ruby_koans/.git/
 remote: Counting objects: 294, done.
@@ -28,18 +28,18 @@ remote: Compressing objects: 100% (286/286), done.
 remote: Total 294 (delta 184), reused 0 (delta 0)
 Receiving objects: 100% (294/294), 51.84 KiB, done.
 Resolving deltas: 100% (184/184), done.
-{% endhighlight %}
+</code></pre>
 
 Done.  Get out your favorite editor (or IDE) and have a command prompt|shell or two ready.  You want to first run *path\_to\_enlightenment.rb*:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 ruby path_to_enlightenment.rb
 
 Thinking AboutAsserts
   test_assert_truth has damaged your karma.
 
 You have not yet reached enlightenment ...
-<false> is not true.
+&lt;false> is not true.
 
 Please meditate on the following code:
 ./about_asserts.rb:10:in `test_assert_truth'
@@ -47,11 +47,11 @@ path_to_enlightenment.rb:28
 
 
 mountains are merely mountains
-{% endhighlight %}
+</code></pre>
 
 Open *about\_asserts.rb* and look up the test method called *test\_assert\_truth* and fix whatever is wrong with it.  The tests will give you hints, so don't worry, you'll figure it out.  Once you do, save the file, re-run *path\_to\_enlightenment.rb*.
 
-{% highlight text %}
+<pre><code class="no-highlight">
 ruby path_to_enlightenment.rb
 
 Thinking AboutAsserts
@@ -60,7 +60,7 @@ Thinking AboutAsserts
 
 You have not yet reached enlightenment ...
 This should be true -- Please fix this.
-<false> is not true.
+&lt;false> is not true.
 
 Please meditate on the following code:
 ./about_asserts.rb:16:in `test_assert_with_message'
@@ -68,13 +68,13 @@ path_to_enlightenment.rb:28
 
 
 learn the rules so you know how to break them properly
-{% endhighlight %}
+</code></pre>
 
 You will now see that *test\_assert\_truth* has expanded your awareness.  Now go on to the next test and fix the problem in there.  Rinse and repeat.
 
 If you ever get up to *about\_scoring\_project.rb*, please let me know how you implemented the score method.  Here's mine:
 
-{% highlight ruby %}
+<pre><code class="ruby">
 def score(dice)
   total = 0
   rolls = dice.dup
@@ -96,21 +96,21 @@ def score(dice)
   end
   total
 end
-{% endhighlight %}
+</code></pre>
 
 I added additional tests just for the heck of it:
 
-{% highlight ruby %}
+<pre><code class="ruby">
   def test_other_oddities
     assert_equal 1100, score([1,1,1,1])
     assert_equal 1200, score([1,1,1,1,1])
     assert_equal 600, score([5,5,5,5,5])
   end
-{% endhighlight %}
+</code></pre>
 
 Here's my Proxy class from *about\_proxy\_object\_project.rb*:
 
-{% highlight ruby %}
+<pre><code class="ruby">
 class Proxy
   attr_reader :messages
 
@@ -133,6 +133,6 @@ class Proxy
     return @messages.count(message)
   end
 end
-{% endhighlight %}
+</code></pre>
 
 Have fun!

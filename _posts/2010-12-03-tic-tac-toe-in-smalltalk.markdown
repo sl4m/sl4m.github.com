@@ -11,7 +11,7 @@ During my [apprenticeship](http://skim.cc/), I wrote a Tic Tac Toe program in Sm
 
 Anyway, before I go off on talking about Smalltalk history, the source code is on my GitHub [repo](https://github.com/sl4m/tic_tac_toe_smalltalk).  Here is a sample of what the code looks like:
 
-{% highlight smalltalk %}
+<pre><code class="smalltalk">
 Board subclass: ThreeByThree [
   ThreeByThree class >> new [
     ^super new initialize
@@ -30,10 +30,10 @@ Board subclass: ThreeByThree [
   ]
 
   findPattern: pattern [
-    ((list at: (pattern at: 1)) = 'X' & (list at: (pattern at: 2)) = 'X' & (list at: (pattern at: 3)) = 'X')
+    ((list at: (pattern at: 1)) = 'X' &amp; (list at: (pattern at: 2)) = 'X' &amp; (list at: (pattern at: 3)) = 'X')
       ifTrue: [winner := 'X'].
-    ((list at: (pattern at: 1)) = 'O' & (list at: (pattern at: 2)) = 'O' & (list at: (pattern at: 3)) = 'O')
+    ((list at: (pattern at: 1)) = 'O' &amp; (list at: (pattern at: 2)) = 'O' &amp; (list at: (pattern at: 3)) = 'O')
       ifTrue: [winner := 'O'].
   ]
 ]
-{% endhighlight %}
+</code></pre>

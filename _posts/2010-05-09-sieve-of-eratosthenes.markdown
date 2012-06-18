@@ -13,7 +13,7 @@ Last week, I learned about Sieve of Eratosthenes.  According to [Wikipedia](http
 
 I was asked to write the ancient algorithm in Ruby.  Here is the code.
 
-{% highlight ruby %}
+<pre><code class="ruby">
 class Sieve
   attr_reader :prime_numbers
 
@@ -25,9 +25,9 @@ class Sieve
 
   def remove_non_prime_numbers
     @prime_numbers.each do |m|
-      if m <= Math.sqrt(@number)
+      if m &lt;= Math.sqrt(@number)
         @prime_numbers.each do |n|
-          if m != n && n % m == 0
+          if m != n &amp;&amp; n % m == 0
             @prime_numbers.delete(n)
           end
         end
@@ -40,4 +40,4 @@ if $0 == __FILE__
   p = Sieve.new(ARGV[0]).prime_numbers
   puts 'There are ' + p.length.to_s + ' prime numbers: ' + p.join(', ')
 end
-{% endhighlight %}
+</code></pre>

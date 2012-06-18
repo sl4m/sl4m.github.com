@@ -26,17 +26,17 @@ Install msysgit with OpenSSH option (should be the last one in red).  Follow the
 * Open command prompt (cmd.exe)
 * Navigate to %HOME%
 
-{% highlight text %}
+<pre><code class="no-highlight">
 C:\Windows\System32>cd %HOME%
 
 C:\Users\skim>
-{% endhighlight %}
+</code></pre>
 
 * Enter the following:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 C:\Users\skim>ssh-keygen -t rsa -C "email@address.com"
-{% endhighlight %}
+</code></pre>
 
 where "email@address.com" is your own email address linked to your GitHub account.
 
@@ -44,7 +44,7 @@ where "email@address.com" is your own email address linked to your GitHub accoun
 * Now it will ask you for a passphrase.  Now for the sake of simplicity, I'm not going to enter a passphrase, but you should read this [help guide](http://help.github.com/working-with-key-passphrases/) on why you should use a passphrase.
 * Re-enter your passphrase (in my case, I left it empty and pressed *Enter*)
 
-{% highlight text %}
+<pre><code class="no-highlight">
 C:\Users\skim>ssh-keygen -t rsa -C "email@address.com"
 Generating public/private rsa key pair.
 Enter file in which to save the key (/c/Users/skim/.ssh/id_rsa):
@@ -54,25 +54,25 @@ Your identification has been saved in /c/Users/skim/.ssh/id_rsa.
 Your public key has been saved in /c/Users/skim/.ssh/id_rsa.pub.
 The key fingerprint is:
 e8:ae:60:8f:38:c2:98:1d:6d:84:60:8c:9e:dd:47:81 email@address.com
-{% endhighlight %}
+</code></pre>
 
 At this point, it created two important files under %HOME%\\.ssh : *id\_rsa* and *id\_rsa.pub*
 
-{% highlight text %}
+<pre><code class="no-highlight">
 C:\Users\skim>dir .ssh
  Volume in drive C has no label.
  Volume Serial Number is 4C30-D3E0
 
  Directory of C:\Users\skim\.ssh
 
-02/07/2010  07:43 PM    <DIR>          .
-02/07/2010  07:43 PM    <DIR>          ..
+02/07/2010  07:43 PM    &lt;DIR>          .
+02/07/2010  07:43 PM    &lt;DIR>          ..
 02/06/2010  11:10 PM             1,675 id_rsa
 02/06/2010  11:10 PM               399 id_rsa.pub
 02/07/2010  07:43 PM               407 known_hosts
                3 File(s)          2,481 bytes
                2 Dir(s)  11,605,680,128 bytes free
-{% endhighlight %}
+</code></pre>
 
 The content of *id\_rsa.pub* will be used to add a public key to your [SSH public keys](https://github.com/account#ssh_bucket) list on your GitHub account.  This will allow you to talk to your GitHub repositories from the very computer you are using now.  Make sure you have done this.
 
@@ -80,7 +80,7 @@ The other file, *id\_rsa* will be used to allow access to your GitHub repositori
 
 Under %HOME%\\.ssh, create a new file called *config* and add the following:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 ProxyCommand C:/git/bin/connect.exe -H username@proxy.example.com:443 %h %p
 
 Host github.com
@@ -98,7 +98,7 @@ Hostname ssh.github.com
 IdentityFile "C:\Users\skim\\.ssh\id_rsa"
 TCPKeepAlive yes
 IdentitiesOnly yes
-{% endhighlight %}
+</code></pre>
 
 Make sure to change the following in the above commands to match your environment:
 
@@ -110,26 +110,26 @@ Make sure to change the following in the above commands to match your environmen
 
 Assuming \_Your\_Git\_Path\_\bin\ folder is in your PATH environment variable, try running the following command:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 C:\Users\skim>ssh -F %HOME%\skim\.ssh\config github.com
 
 ERROR: Hi sl4m! You've successfully authenticated, but GitHub does not provide shell access
 
 Connection to github.com closed.
-{% endhighlight %}
+</code></pre>
 
 The error is expected since GitHub does not allow shell access.  What is most important is that you see the "successfully authenticated" message.
 
 Now that you're all set, you can run git commands.  It's slightly different from the git commands you might be used to (if you're familiar with git already).  When you clone a repository, you typically invoke this command:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 git clone git://github.com/rails/rails.git
-{% endhighlight %}
+</code></pre>
 
 But with SSH, this is how you invoke the same command:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 git clone ssh://git@github.com:443/rails/rails.git
-{% endhighlight %}
+</code></pre>
 
 Follow the pattern and you should be able to run all git commands via SSH/proxy.

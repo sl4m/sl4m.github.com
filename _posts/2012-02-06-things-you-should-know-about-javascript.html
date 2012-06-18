@@ -36,10 +36,10 @@ tag: javascript
       length of the array after instantiation.
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       var array = new Array(2);
       array.length;  // 2
-      {% endhighlight %}
+      </code></pre>
     </p>
     <p>
       I’m not sure why you would do this because arrays in
@@ -48,25 +48,25 @@ tag: javascript
       will instantiate the array with the arguments provided.
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       var array1 = new Array(true);
       array1;  // [true]
 
       var array2 = new Array(1, "a", {});
       array2;  // [1, "a", {}]
-      {% endhighlight %}
+      </code></pre>
     </p>
     <p>
       Objects are easier to build when using the short-hand syntax.
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       var object1 = { key1 : 'value1', key2 : 'value2' };
 
       var object2 = new Object();
       var object.key1 = 'value1';
       var object.key2 = 'value2';
-      {% endhighlight %}
+      </code></pre>
     </p>
   </li>
   <li>
@@ -75,7 +75,7 @@ tag: javascript
       You can call properties/methods using dot notation or subscript notation.
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       var object = {
         value : 42,
         fn : function() {
@@ -87,7 +87,7 @@ tag: javascript
       object["value"];  // 42
       object.fn();  // "hello world"
       object["fn"]()  // "hello world"
-      {% endhighlight %}
+      </code></pre>
     </p>
     <p>
       You might ask why you'd ever want to use subscript notation.
@@ -104,12 +104,12 @@ tag: javascript
       type coercion when using the equality operator.
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       "0" == 0;  // true
       "0" == false;  // true
       undefined == null;  // true
       " \t\r\n" == 0;  // true
-      {% endhighlight %}
+      </code></pre>
     </p>
     <p>
       JavaScript considers <code>0</code> and <code>""</code> to be falsy unlike Ruby.
@@ -120,11 +120,11 @@ tag: javascript
   <li>
     <p><b>Function Scope, The Only Scope</b></p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       if (true) {
         var SomeObject = {};
       }
-      {% endhighlight %}
+      </code></pre>
     </p>
     <p>
       What is the value of <code>SomeObject</code> outside of the <code>if</code> statement?
@@ -136,24 +136,24 @@ tag: javascript
       <code>SomeObject</code> is <code>{}</code>.
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       function a() {
         var b = 1;
       }
 
       a();
       b;  // ReferenceError
-      {% endhighlight %}
+      </code></pre>
     </p>
   </li>
   <li>
     <p><b>Hoisting</b></p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       if (!SomeObject) {
         var SomeObject = {};
       }
-      {% endhighlight %}
+      </code></pre>
     </p>
     <p>
       For this example, what is the value of <code>SomeObject</code>?
@@ -164,36 +164,36 @@ tag: javascript
       turns into this before execution:
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       var SomeObject;
 
       if (!SomeObject) {
         SomeObject = {};
       }
-      {% endhighlight %}
+      </code></pre>
     </p>
     <p>
       So, the value of <code>SomeObject</code> is <code>{}</code>.  Similarly, function
       declarations are <i>hoisted</i> to the top as well.  This example:
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       abracadabra();
       function abracadabra() {
         var magic = "it works!";
       }
-      {% endhighlight %}
+      </code></pre>
     </p>
     <p>
       works because it looks like this before execution:
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       function abracadabra() {
         var magic = "it works!";
       }
       abracadabra();
-      {% endhighlight %}
+      </code></pre>
     </p>
     <p>
       It's magic!
@@ -207,23 +207,23 @@ tag: javascript
       <code>Boolean</code> functions:
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       String(42);  // "42"
       Number("42");  // 42
       Boolean("true");  // true
-      {% endhighlight %}
+      </code></pre>
     </p>
     <p>
       Cool kids like to use this approach, which works the same way:
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       // cast string to number using the plus operator
       +"42";  // 42
 
       // cast number to string using an empty string and coercion
       "" + 42;  // "42"
-      {% endhighlight %}
+      </code></pre>
     </p>
   </li>
   <li>
@@ -233,11 +233,11 @@ tag: javascript
       literals, but not <code>Numbers</code>?
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       "1 2 3".split(" ");  // ["1", "2", "3"]
 
       2.toFixed();  // SyntaxError
-      {% endhighlight %}
+      </code></pre>
     </p>
     <p>
       According to the JavaScript Garden documentation, it's
@@ -247,9 +247,9 @@ tag: javascript
       literal in parentheses.
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       (2).toFixed();  // "2"
-      {% endhighlight %}
+      </code></pre>
     </p>
   </li>
   <li>
@@ -262,9 +262,9 @@ tag: javascript
       or <code>apply</code>.
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       Array.prototype.shift.call(arguments);
-      {% endhighlight %}
+      </code></pre>
     </p>
   </li>
   <li>
@@ -274,7 +274,7 @@ tag: javascript
       in JavaScript.
     </p>
     <p>
-      {% highlight javascript %}
+      <pre><code class="javascript">
       var fn = (function() {
         var privatizedVariable = "private";
         return function() {
@@ -284,7 +284,7 @@ tag: javascript
 
       fn();  // "private"
       privatizedVariable;  // ReferenceError
-      {% endhighlight %}
+      </code></pre>
     </p>
   </li>
 </ol>

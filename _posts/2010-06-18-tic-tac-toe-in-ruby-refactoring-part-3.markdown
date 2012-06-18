@@ -10,12 +10,12 @@ categories:
 
 The MinMaxPlayer is complete.  I had trouble with the minmax algorithm and did not include tree depth as part of the logic.  Now it seems to be working and I'm completely stoked.  Here is the MinMaxPlayer class and its RSpec tests.
 
-{% highlight ruby %}
+<pre><code class="ruby">
 require 'player'
 require 'board'
 require 'ui'
 
-class MinMaxPlayer < Player
+class MinMaxPlayer &lt; Player
 
   def initialize(piece)
     super(piece)
@@ -66,11 +66,11 @@ class MinMaxPlayer < Player
     return @best_move
   end
 end
-{% endhighlight %}
+</code></pre>
 
 MinMaxPlayer RSpec tests.
 
-{% highlight ruby %}
+<pre><code class="ruby">
 require File.expand_path(File.dirname(__FILE__)) + "/spec_helper"
 require 'min_max_player.rb'
 require 'board'
@@ -189,4 +189,4 @@ describe MinMaxPlayer do
     @min_max.make_move.should == 2
   end
 end
-{% endhighlight %}
+</code></pre>

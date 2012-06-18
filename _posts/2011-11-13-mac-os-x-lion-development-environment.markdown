@@ -91,9 +91,9 @@ Git, ctags, zsh, and tmux installations were straight forward.  Homebrew is your
  not have a vim formula (and probably does not plan to).  <strike>I had to install this from scratch.  This is probably the
  long-winded process of getting it installed, but I digress:</strike> Update: You can brew install it.
 
-{% highlight text %}
+<pre><code class="bash">
 brew install https://raw.github.com/adamv/homebrew-alt/master/duplicates/vim.rb
-{% endhighlight %}
+</code></pre>
 
 I have been using MacVim for the past year and a half, but since this summer have been using it exclusively.  I'm taking a
  step further and switch to vim, so I can use it in tmux sessions, over ssh, etc.  I used to use AkitaOnRails'

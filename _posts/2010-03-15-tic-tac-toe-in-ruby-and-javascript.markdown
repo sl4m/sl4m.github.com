@@ -32,7 +32,7 @@ I was at a loss.  I think it was easy for my friend since he thinks in RL, but I
 
 *Update:* This code is old and has been replaced.  See the latest [here](http://github.com/sl4m/tic_tac_toe_ruby).
 
-{% highlight ruby %}
+<pre><code class="ruby">
 # move positions
 #
 #  0 | 1 | 2
@@ -197,13 +197,13 @@ if $0 == __FILE__
   print "\n\nYou are X.  Please go first."
   TicTacToe.new.play
 end
-{% endhighlight %}
+</code></pre>
 
 I initially began writing the game in JavaScript, but couldn't figure out a way to display the board in the console without having to deal with the browser.  Luckily, I was pointed in the right direction and used [Node.js](http://nodejs.org/) (sadly does not work on Windows).  It handled the stdout/stdin just fine.  I had to fiddle around with stdin by using Node's process object and add a listener for stdin.  It wasn't immediately intuitive how the listener worked, but I was able to finally get it to prompt for user input multiple times to play the game.
 
 ## Tic Tac Toe in JavaScript
 
-{% highlight javascript %}
+<pre><code class="javascript">
 /**
   move positions
 
@@ -228,8 +228,8 @@ exports.game = function() {
      [(/......O O/),7],[(/..O.. ..O/),5],
      [(/. ..O..O./),1],[(/... OO.../),3],
      [(/.O..O.. ./),7],[(/...OO .../),5]];
-  
-  var BlockingPatterns = 
+
+  var BlockingPatterns =
     [[(/  X . X  /),1],[(/ XX....../),0],[(/X..X.. ../),6],
      [(/......XX /),8],[(/.. ..X..X/),2],[(/ ..X..X../),0],
      [(/...... XX/),6],[(/..X..X.. /),8],[(/XX ....../),2],
@@ -241,7 +241,7 @@ exports.game = function() {
      [(/ X ..X.. /),2],[(/  XX.. ../),0],[(/X.. .. X /),6],
      [(/.. .XX   /),8],[(/X  ..X.. /),2],[(/ X  ..X../),0],
      [(/ ..X..  X/),6],[(/..X..  X /),8],[(/X  ..X.. /),2]];
-       
+
   var WonPatterns =
     [[(/OOO....../),'O'], [(/...OOO.../),'O'],
      [(/......OOO/),'O'], [(/O..O..O../),'O'],
@@ -252,14 +252,14 @@ exports.game = function() {
      [(/.X..X..X./),'X'], [(/..X..X..X/),'X'],
      [(/X...X...X/),'X'], [(/..X.X.X../),'X']];
   var board = [];
-  for (var i=0; i<9; i+=1) {
+  for (var i=0; i&lt;9; i+=1) {
     board.push(' ');
   }
   var X = 'X',
       O = 'O';
   var players = [X, O],
       turn = X;
-      
+
   var moveCPU = function() {
     var movePos;
     movePos = getWinningPatternMove();
@@ -274,8 +274,8 @@ exports.game = function() {
   var move = function(pos, piece) {
     if (piece !== turn) { return false; }
     pos = Number(pos);
-    if (pos >= 0 && pos <= 8 &&
-      !isNaN(pos) && board[pos] === ' ') {
+    if (pos >= 0 &amp;&amp; pos &lt;= 8 &amp;&amp;
+      !isNaN(pos) &amp;&amp; board[pos] === ' ') {
       board.splice(pos, 1, piece);
       turn = (piece === X) ? O : X;
       return true;
@@ -316,7 +316,7 @@ exports.game = function() {
     var flatBoard = board.join(''),
         i, max = WonPatterns.length, array;
     var gameWinner;
-    for (i=0; i<max; i+=1) {
+    for (i=0; i&lt;max; i+=1) {
       array = flatBoard.match(WonPatterns[i][0]);
       if (array) { gameWinner = WonPatterns[i][1]; }
     }
@@ -331,7 +331,7 @@ exports.game = function() {
   var getWinningPatternMove = function() {
     var flatBoard = board.join(''),
         i, max = WinningPatterns.length, array;
-    for (i=0; i<max; i+=1) {
+    for (i=0; i&lt;max; i+=1) {
       array = flatBoard.match(WinningPatterns[i][0]);
       if (array) { return WinningPatterns[i][1]; }
     }
@@ -340,7 +340,7 @@ exports.game = function() {
   var getBlockingPatternMove = function() {
     var flatBoard = board.join(''),
         i, max = BlockingPatterns.length, array;
-    for (i=0; i<max; i+=1) {
+    for (i=0; i&lt;max; i+=1) {
       array = flatBoard.match(BlockingPatterns[i][0]);
       if (array) { return BlockingPatterns[i][1]; }
     }
@@ -358,7 +358,7 @@ exports.game = function() {
       sys.print("Enter your move [0-8]: ");
       process.stdio.addListener('data', function(response) {
         if (move(response, X)) {
-          if (!isGameWinner() && !isBoardFilled()) {
+          if (!isGameWinner() &amp;&amp; !isBoardFilled()) {
               moveCPU();
               if (!isGameWinner()) {
                 display();
@@ -392,7 +392,7 @@ exports.game = function() {
     }
   };
 };
-{% endhighlight %}
+</code></pre>
 
 Both implementations are a bit [smelly](http://en.wikipedia.org/wiki/Code_smell).  With the time I had, I tried what I could to make it less smelly.  I'm also new to Ruby so I kind of have an excuse ;-).  The JavaScript code is pretty much a straight port from the Ruby code, so it'll include some of the smells.  One thing I was asked to do was to create tests along with the JavaScript code\*.  When thinking about the tests, it made me think how testable the JavaScript TicTacToe object really was.  I ended up adding more public methods to the object to allow the tests to access certain properties of the object.  Had I approached the problem test first, I think it would've been easier to design the code.
 
@@ -400,7 +400,7 @@ Both implementations are a bit [smelly](http://en.wikipedia.org/wiki/Code_smell)
 
 ## Tic Tac Toe Tests in JavaScript
 
-{% highlight javascript %}
+<pre><code class="javascript">
 (function() {
   var ticTacToe = require('./tic_tac_toe_node');
   var sys = require('sys');
@@ -464,13 +464,13 @@ Both implementations are a bit [smelly](http://en.wikipedia.org/wiki/Code_smell)
   runGame();
 
 })();
-{% endhighlight %}
+</code></pre>
 
 If you're thinking why the JavaScript version of Tic Tac Toe isn't running on Node.js, it's because it needs to be 'required' from another file due to the [CommonJS module system](http://nodejs.org/api.html#_modules).  Just save the JavaScript TicTacToe code as *tic\_tac\_toe\_node.js* and JavaScript test code as *tic\_tac\_toe\_node\_test.js* in the same folder, and run the test code:
 
-{% highlight text %}
+<pre><code class="bash">
 node tic_tac_toe_node_test.js
-{% endhighlight %}
+</code></pre>
 
 It should run the small test suite and execute the game.  It's very simple, so it will end after a game.  You'll have to run the test again to run multiple games.
 

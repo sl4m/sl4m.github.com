@@ -10,7 +10,7 @@ categories:
 
 Over the weekend, I spent more time refactoring my Tic Tac Toe program.  It now looks completely different from the [original](http://skim.la/2010/03/15/tic-tac-toe-in-ruby-and-javascript) source code.  I attempted to use TDD 100% of the time, and I found myself using it almost all the time.  It took some time getting used to writing tests first, but once I got the hang of it, it felt comfortable.  There's still a lot of work to do, but here is the main file along with some tests.  You can see the rest of the source code on my GitHub [repo](http://github.com/sl4m/tic_tac_toe_ruby). 
 
-{% highlight ruby %}
+<pre><code class="ruby">
 # move positions
 #
 #  0 | 1 | 2
@@ -50,7 +50,7 @@ class TicTacToe
     @player1 = ask_for_player('O')
     @player2 = ask_for_player('X')
   end
-  
+
   def play
     loop do
       choose_players
@@ -71,11 +71,11 @@ end
 if $0 == __FILE__
   TicTacToe.new.play
 end
-{% endhighlight %}
+</code></pre>
 
 The RSpec tests
 
-{% highlight ruby %}
+<pre><code class="ruby">
 # tictactoe_spec.rb
 require File.expand_path(File.dirname(__FILE__)) + "/spec_helper"
 require 'tictactoe'
@@ -89,7 +89,7 @@ describe TicTacToe do
     @std_out = StringIO.new
     @ttt = TicTacToe.new(@std_in, @std_out)
   end
-  
+
   it "should be able to create a new instance" do
     lambda { TicTacToe.new }.should_not raise_error
   end
@@ -113,5 +113,4 @@ describe TicTacToe do
     @ttt.ask_for_player('X').instance_of?(CpuPlayer)
   end
 end
-{% endhighlight %}
-
+</code></pre>

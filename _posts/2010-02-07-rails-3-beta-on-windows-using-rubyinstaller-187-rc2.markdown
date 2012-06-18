@@ -26,7 +26,7 @@ I chose C:\Ruby187\ as my default path and applied DevKit on top of it.  Be sure
 
 I followed the instructions on Matt Hulse's post, [Massaging Rails 3 Beta on Windows](http://matt-hulse.com/articles/2010/02/05/massaging-rails-3-beta-on-windows/) to install the important gems for rails and created a quick rails 3 app.
 
-{% highlight text %}
+<pre><code class="no-highlight">
 C:\Users\skim>gem install tzinfo builder memcache-client rack rack-test rack-mount erubis mail text-format thor bundler i18n rake --no-ri --no-rdoc
 Successfully installed tzinfo-0.3.16
 Successfully installed builder-2.1.2
@@ -59,7 +59,7 @@ Successfully installed actionmailer-3.0.0.beta
 Successfully installed railties-3.0.0.beta
 Successfully installed rails-3.0.0.beta
 9 gems installed
-{% endhighlight %}
+</code></pre>
 
 ![Rails 3 Beta](/images/rails3beta.jpg)
 

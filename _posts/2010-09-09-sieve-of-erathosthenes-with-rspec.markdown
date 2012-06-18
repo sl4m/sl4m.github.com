@@ -13,8 +13,8 @@ Four months ago, I [wrote Sieve of Eratosthenes algorithm in Ruby](http://skim.l
 
 ## sieve\_spec.rb
 
-{% highlight ruby %}
-$: << File.expand_path(File.dirname(__FILE__))
+<pre><code class="ruby">
+$: &lt;&lt; File.expand_path(File.dirname(__FILE__))
 require 'spec'
 require 'sieve'
 
@@ -43,23 +43,23 @@ describe Sieve do
     end
   end
 end
-{% endhighlight %}
+</code></pre>
 
 ## sieve.rb
 
-{% highlight ruby %}
+<pre><code class="ruby">
 module Sieve
   def self.of(n)
-    return [] if n <= 1
+    return [] if n &lt;= 1
     not_primes = []
     (2..n).each do |num|
-      if num <= Math.sqrt(n)
+      if num &lt;= Math.sqrt(n)
         (2..n).each do |p|
-          not_primes << p if num != p && p % num == 0
+          not_primes &lt;&lt; p if num != p &amp;&amp; p % num == 0
         end
       end
     end
     return (2..n).to_a - not_primes
   end
 end
-{% endhighlight %}
+</code></pre>

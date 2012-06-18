@@ -17,7 +17,7 @@ Here's how to get started and reach your way to enlightenment.
 
 Clojure Koans is on [GitHub](https://github.com/functional-koans/clojure-koans).  First let's do a *git clone*:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [~/local/git] git clone https://github.com/functional-koans/clojure-koans.git
 Cloning into clojure-koans...
 remote: Counting objects: 487, done.
@@ -27,11 +27,11 @@ Receiving objects: 100% (487/487), 60.71 KiB, done.
 Resolving deltas: 100% (264/264), done.
 [~/local/git] cd clojure-koans
 [master][~/local/git/clojure-koans]
-{% endhighlight %}
+</code></pre>
 
 Here's a quick look at the directory.  *Note:* Clojure Koans is no longer a branch of Functional Koans.
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/clojure-koans] ls -lah
 total 64
 drwxr-xr-x  10 skim  staff   340B Jan  2 12:49 ./
@@ -44,7 +44,7 @@ drwxr-xr-x  13 skim  staff   442B Jan  2 12:49 .git/
 -rw-r--r--   1 skim  staff   165B Jan  2 12:49 project.clj
 drwxr-xr-x  10 skim  staff   340B Jan  2 12:49 script/
 drwxr-xr-x   5 skim  staff   170B Jan  2 12:49 src/
-{% endhighlight %}
+</code></pre>
 
 Cool, now let's install [Leiningen](http://github.com/technomancy/leiningen) (pronounced 'LINE-ing-en') to grab the latest Clojure jar.  We'll need this jar along with JRE 1.5 or higher.  Most Macs should have JRE installed by default.
 
@@ -52,7 +52,7 @@ To install Leiningen, simply download this [script](https://github.com/technoman
 
 I placed my copy in *~/bin* and ran chmod on it.
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [~/bin] ls -lah
 total 48
 -rw-r--r--@ 1 skim  staff   6.0K Jun 19  2010 .DS_Store
@@ -66,11 +66,11 @@ total 48
 -rwxr-xr-x  1 skim  staff   221B Jun 19  2010 ack*
 -rwxr-xr-x@ 1 skim  staff   5.6K Jan  2 13:05 lein*
 -rwxr-xr-x  1 skim  staff   2.2K Jun 19  2010 mvim*
-{% endhighlight %}
+</code></pre>
 
 Now let's run the lein executable.
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [~/bin] ./lein
 Downloading Leiningen now...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
@@ -101,11 +101,11 @@ version     Print version for Leiningen and the current JVM.
 
 Run lein help $TASK for details.
 Also available: readme, tutorial, copying, sample, and news.
-{% endhighlight %}
+</code></pre>
 
 Excellent, we have Leiningen installed.  Now let's go back to the clojure-koans directory and run *lein deps*.  This will read the *project.clj* file to find out which dependencies it needs to install.
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/clojure-koans] lein deps
 Downloading: org/clojure/clojure/1.3.0-alpha3/clojure-1.3.0-alpha3.pom from central
 Downloading: org/clojure/clojure/1.3.0-alpha3/clojure-1.3.0-alpha3.pom from clojure
@@ -124,24 +124,24 @@ Downloading: junit/junit/3.8.1/junit-3.8.1.jar from clojure-snapshots
 Downloading: junit/junit/3.8.1/junit-3.8.1.jar from clojars
 Downloading: junit/junit/3.8.1/junit-3.8.1.jar from central
 Copying 3 files to /Users/skim/local/git/clojure-koans/lib
-{% endhighlight %}
+</code></pre>
 
 ## Running Clojure Koans
 
 Ok, now I'm not sure how this works exactly on Windows, but Mac and Linux, you should be able to run koans this way:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/clojure-koans] script/run
 
 FAIL in clojure.lang.PersistentList$EmptyList@1 (equalities.clj:1)
 We shall contemplate truth by testing reality, via equality.
 expected: (= __ true)
   actual: (not (= nil true))
-{% endhighlight %}
+</code></pre>
 
 Great!  If you read through the error message, you'll see there's something wrong in the equalities.clj file.  All files live in the src/koans directory.  Open it up, fix the tests and re-run the previous command.  For the sake of showing you an example, I fixed the first test:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/clojure-koans] cat src/koans/equalities.clj
 (meditations
   "We shall contemplate truth by testing reality, via equality."
@@ -153,13 +153,13 @@ Great!  If you read through the error message, you'll see there's something wron
   "You can test equality of many things"
   (= (+ 3 4) __ (+ 2 __)))
 
-[master][~/local/git/clojure-koans] script/run                 
+[master][~/local/git/clojure-koans] script/run
 
 FAIL in clojure.lang.PersistentList$EmptyList@1 (equalities.clj:1)
 To understand reality, we must compare our expectations against reality.
 expected: (= __ (+ 1 1))
   actual: (not (= nil 2))
-{% endhighlight %}
+</code></pre>
 
 Now fix the next test and you'll be on your way to enlightenment.
 
@@ -167,10 +167,10 @@ Now fix the next test and you'll be on your way to enlightenment.
 
 If you ever get to *functions.clj*, tell me how you implemented the last one!  Here's mine:
 
-{% highlight clojure %}
+<pre><code class="lisp">
   "Higher-order functions take function arguments"
   (= 25 ((fn [n f] (f n)) 5
           (fn [n] (* n n)))))
-{% endhighlight %}
+</code></pre>
 
 Have fun!

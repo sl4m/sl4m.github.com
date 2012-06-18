@@ -12,7 +12,7 @@ categories:
 
 I mentioned in my previous [post](/2010/02/17/my-learning-resources/) that I requested a mentorship with [Kris](http://www.railsmentors.org/users/237) at [Rails Mentors](http://railsmentors.org/).  I was fortunate he accepted my request and I spoke to him over the weekend via Skype to discuss about what I want to get out of this mentorship.  I told him I wanted to start a small Rails project, specifically, build a website that can create rss feeds for rss-less websites.  Kris liked the idea and created a [private](https://github.com/kris/mentor-sl4m) github repo.  He sent me his environment.rb file and my job is to look into the gems he likes to use in his Rails projects.
 
-{% highlight ruby %}
+<pre><code class="ruby">
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
@@ -76,4 +76,4 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   config.i18n.default_locale = :en
 end
-{% endhighlight %}
+</code></pre>

@@ -10,7 +10,7 @@ categories:
 
 One of the many refactoring techniques I can apply to my smelly Tic Tac Toe code is [Extract Class](http://en.wikipedia.org/wiki/Extract_class).  One of the 8th Lighters pointed me to Martin Fowler's book ["Refactoring"](http://www.amazon.com/Refactoring-Improving-Design-Existing-Technology/dp/0201485672/) which lists a good number of refactoring techniques.  In short, Extract Class refactoring is used to extract methods from an overweight class that has lost its purpose to a new class.  I used this refactoring to extract methods that had reference to the board.  While it's not a significant change, it helped me understand how to use RSpec and drive the code via TDD.  Here's the code.  It is also on [GitHub](http://github.com/sl4m/tic_tac_toe_ruby).
 
-{% highlight ruby %}
+<pre><code class="ruby">
 # move positions
 #
 #  0 | 1 | 2
@@ -199,11 +199,11 @@ if $0 == __FILE__
   print "\n\nYou are X.  Please go first."
   TicTacToe.new.play
 end
-{% endhighlight %}
+</code></pre>
 
 Here are the tests.
 
-{% highlight ruby %}
+<pre><code class="ruby">
 # tictactoe_spec.rb
 require 'tictactoe'
 
@@ -244,4 +244,4 @@ describe TicTacToe::Board, "#someone_win?" do
     board.someone_win?.should == true
   end
 end
-{% endhighlight %}
+</code></pre>

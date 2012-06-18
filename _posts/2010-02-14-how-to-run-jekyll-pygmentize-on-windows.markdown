@@ -35,23 +35,23 @@ I created a folder called 'Scripts' under C:\Python26.  I added C:\Python26 and 
 
 In order to install pygments, you need to install easy_install which is included in setuptools.  Download the source ([setuptools-0.6c11.tar.gz](http://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz#md5=7df2a529a074f613b509fb44feefe74e)) and egg ([setuptools-0.6c11-py2.6.egg](http://pypi.python.org/packages/2.6/s/setuptools/setuptools-0.6c11-py2.6.egg#md5=bfa92100bd772d5a213eedd356d64086)).  Extract ez_setup.py from setuptools-0.6.c11.tar.gz to the same folder as setuptools-0.6c11-py2.6.egg.  Open up a command prompt, navigate to the folder with the egg file and run:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 python ez_setup.py setuptools-0.6c11-py2.6.egg
-{% endhighlight %}
+</code></pre>
 
 This will add easy_install.exe and other files to your C:\Python26\Scripts folder.
 
 Now to install pygments, simply run this command:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 easy_install Pygments
-{% endhighlight %}
+</code></pre>
 
 According to Jon, easy_install does not create a wrapper for the Pygmentize script, so creating a batch file pygmentize.bat under C:\Python26\Scripts should do the trick.  Add this command to the batch file:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 @python.exe %~dp0pygmentize %*
-{% endhighlight %}
+</code></pre>
 
 Now when running jekyll locally, you should be able to see the pygmentize highlights
 

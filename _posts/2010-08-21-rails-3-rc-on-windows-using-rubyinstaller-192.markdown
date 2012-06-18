@@ -25,7 +25,7 @@ Installing Ruby using RubyInstaller should be straight forward.  The installer a
 
 Install Rails 3 using the *--pre* parameter.  *Update:* --pre is no longer necessary now that Rails 3 is official
 
-{% highlight text %}
+<pre><code class="no-highlight">
 c:\devkit>gem install rails --pre
 Temporarily enhancing PATH to include DevKit...
 Successfully installed activesupport-3.0.0.rc
@@ -52,7 +52,7 @@ Successfully installed railties-3.0.0.rc
 Successfully installed bundler-1.0.0.rc.5
 Successfully installed rails-3.0.0.rc
 23 gems installed
-{% endhighlight %}
+</code></pre>
 
 If you read my previous [Rails 3 post](http://skim.la/2010/02/07/rails-3-beta-on-windows-using-rubyinstaller-187-rc2/), we had to install a lot of the dependencies separately.  The latest Rails gem seems to take care of it.  Also, RubyInstaller comes with Rake, so you do not need to install it.
 
@@ -62,7 +62,7 @@ Next up is installing SQLite or MySQL (your preference).
 
 Let's install SQLite:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 c:\devkit>gem install sqlite3-ruby
 Temporarily enhancing PATH to include DevKit...
 
@@ -84,13 +84,13 @@ Temporarily enhancing PATH to include DevKit...
 
 Successfully installed sqlite3-ruby-1.3.1-x86-mingw32
 1 gem installed
-{% endhighlight %}
+</code></pre>
 
 The instructions above says to use SQLite version 3.6.23.1 and provides a link to the dll.  I would also get the exe which is available [here](http://www.sqlite.org/sqlite-3_6_23_1.zip).  Place sqlite3.dll and sqlite3.exe in *C:\Ruby192\bin* or a general bin directory in the PATH (thanks for the correction, Luis!).
 
 Now let's create a new Rails app.  Note, the new command to create the app:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 E:\p\rails>rails new rails3rc --database=sqlite3
       create
       create  README
@@ -168,11 +168,11 @@ E:\p\rails>rails new rails3rc --database=sqlite3
       create  tmp/pids
       create  vendor/plugins
       create  vendor/plugins/.gitkeep
-{% endhighlight %}
+</code></pre>
 
 Start up the local server by running this command:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 E:\p\rails\rails3rc>rails server
 => Booting WEBrick
 => Rails 3.0.0.rc application starting in development on http://0.0.0.0:3000
@@ -181,7 +181,7 @@ E:\p\rails\rails3rc>rails server
 [2010-08-21 11:48:18] INFO  WEBrick 1.3.1
 [2010-08-21 11:48:18] INFO  ruby 1.9.2 (2010-08-18) [i386-mingw32]
 [2010-08-21 11:48:18] INFO  WEBrick::HTTPServer#start: pid=4296 port=3000
-{% endhighlight %}
+</code></pre>
 
 Now you should see that familiar **Welcome aboard** page on [http://localhost:3000/](http://localhost:3000/).
 

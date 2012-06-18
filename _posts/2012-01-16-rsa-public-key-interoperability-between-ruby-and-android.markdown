@@ -23,7 +23,7 @@ The Ruby-based server generates the RSA key pair and stores the RSA private key 
 
 In Ruby, you can simply load up a public key by passing it to `OpenSSL::PKey::RSA::new`.
 
-{% highlight ruby %}
+<pre><code class="ruby">
 require 'openssl'
 require 'base64'
 
@@ -33,11 +33,11 @@ public_key = "MIIBCgKCAQEA20O377QEiZvPsj14LKl2xO23iirJB5WDTVjeab1cIOJu1vbV+Pdwl1
   "xwIDAQAB"
 
 rsa_public_key = OpenSSL::PKey::RSA.new(Base64.decode64(public_key))
-{% endhighlight %}
+</code></pre>
 
 Unfortunately, in Android, it's a bit more complex (oh, Java!).  You have to first get an instance of `KeyFactory`, create an `X509EncodedKeySpec`, pass in the public key string, then generate the public key using that key spec.
 
-{% highlight java %}
+<pre><code class="java">
 public PublicKey getPublicKey() {
     try {
         String publicKey = "MIIBCgKCAQEA20O377QEiZvPsj14LKl2xO23iirJB5WDTVjeab1cIOJu1vbV+Pdwl1Bov8m896ZG4K0S/qvfJcdHLovr2WJ+" +
@@ -54,7 +54,7 @@ public PublicKey getPublicKey() {
     }
     return null;
 }
-{% endhighlight %}
+</code></pre>
 
 Unfortunately, this raises an `InvalidKeySpecException`.  Countless Google queries resulting in many hours of yak shaving, led me to dead ends.  It was when I kicked off a `Ruby 1.9.3` irb instance that showed me the light.
 
@@ -62,7 +62,7 @@ Unfortunately, this raises an `InvalidKeySpecException`.  Countless Google queri
 
 In a `Ruby 1.9.3` irb instance, I loaded the same public key I generated from `Ruby 1.8.7` and to my surprise, noticed the public key changed in the front of my eyes.
 
-{% highlight ruby %}
+<pre><code class="ruby">
 require 'openssl'
 require 'base64'
 
@@ -79,7 +79,7 @@ new_public_key = rsa_public_key.to_s.gsub("\n", "").gsub(/-----(BEGIN|END) PUBLI
 
 new_public_key == public_key
 # => false
-{% endhighlight %}
+</code></pre>
 
 I tried to see if `Ruby 1.9.2` produced the same results; the public key was the same as 1.8.7.  I then tried generating a new public key in `Ruby 1.9.3`, then initialize that key in another `OpenSSL::PKey::RSA` instance in 1.9.3, but the key was identical.  This led me to believe that something changed in `Ruby 1.9.3` that is not in `Ruby 1.8.7/Ruby 1.9.2`.  I searched on Google again for clues and fortunately found something relevant.  [Martin Bo&szlig;let's](https://twitter.com/#!/_emboss_) filed a [bug report](http://bugs.ruby-lang.org/issues/show/4421) for Ruby 1.9.3; in the report, he describes how the encoded format for RSA public keys was not the default format used by OpenSSL, but rather the encoding format specified by PKCS#1.  The [fix](http://bugs.ruby-lang.org/projects/ruby-trunk/repository/diff/ext/openssl/ossl_pkey_rsa.c?rev=31520&type=inline) shows Martin changing `PEM_read_bio_RSAPublicKey` to `PEM_read_bio_RSA_PUBKEY`.  Perusing in the [OpenSSL documentation](http://www.openssl.org/docs/crypto/pem.html) shows what Martin was describing in the bug report: `RSAPublicKey` encodes the public key using the PKCS#1 `RSAPublicKey` structure rather than the `SubjectPublicKeyInfo` structure.  The former structure is not compatible with the crypto library available in Android.
 
@@ -87,7 +87,7 @@ The fix has been applied to `Ruby-1.9.3-p0`, but the problem is still present fo
 
 ## Solution #1: Encode pre-Ruby 1.9.3 RSA public keys using the X.509 format ([gist](https://gist.github.com/1470360))
 
-{% highlight ruby %}
+<pre><code class="ruby">
 require 'openssl'
 require 'base64'
 
@@ -106,7 +106,7 @@ base64 = Base64.encode64(subject_pk_info.to_der)
 
 #This is the equivalent to the X.509 encoding used in >= 1.9.3
 pem = "-----BEGIN PUBLIC KEY-----\n#{base64}-----END PUBLIC KEY-----"
-{% endhighlight %}
+</code></pre>
 
 Martin basically wrote the X.509 encoding format from scratch.  This would have worked for us, but unfortunately, we have already issued RSA public keys to customers and needed to support the PKCS#1 encoded format public keys.
 
@@ -118,7 +118,7 @@ This solution requires classes that are not available in the Android Standard Li
 
 After adding BouncyCastle classes, I created a static method that reads pre-Ruby 1.9.3 public keys, extracts the exponent and modulus, and returns a PublicKey object:
 
-{% highlight java %}
+<pre><code class="java">
 import java.io.IOException;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
@@ -151,7 +151,7 @@ public class RSAUtil {
         return null;
     }
 }
-{% endhighlight %}
+</code></pre>
 
 ## Conclusion
 

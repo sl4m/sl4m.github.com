@@ -15,51 +15,51 @@ Note: I'm using zsh and these [dot files](http://github.com/jferris/config_files
 
 To list local branches:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/tic_tac_toe_ruby] git branch
 * master
-{% endhighlight %}
+</code></pre>
 
 To list remote branches:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/tic_tac_toe_ruby] git branch -r
   origin/HEAD -> origin/master
   origin/master
-{% endhighlight %}
+</code></pre>
 
 ## Create a new branch, check out new branch
 
 Here I'm going to create a branch called limelight.
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/tic_tac_toe_ruby] git branch limelight
 [master][~/local/git/tic_tac_toe_ruby] git branch
   limelight
 * master
-{% endhighlight %}
+</code></pre>
 
 You might be wondering what the asterisk next to the branch name means, in this case, the asterisk next to "master".  It basically tells you which branch you checked out.  You might then be wondering what "checked out" means.  When you have a branch checked out, it is the active branch you are working in.  *git checkout* command allows you to switch between the local branches available.  git is smart enough to understand which folder/files are in which branch, so you do not need to create separate directories for each branch.  All local branches live in the same directory!  Brilliant!
 
 So to check out the new branch (limelight), simply run this command:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/tic_tac_toe_ruby] git checkout limelight
 Switched to branch 'limelight'
-{% endhighlight %}
+</code></pre>
 
 You could easily kill two birds with one stone and create a branch and check it out with a single command:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/tic_tac_toe_ruby] git checkout -b limelight
 Switched to a new branch 'limelight'
-{% endhighlight %}
+</code></pre>
 
 Or kill four birds with two stones: create a remote branch, create a local branch, track the local branch with a remote branch and check out the new local branch.
 
 This creates a copy of origin into a new remote branch:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/tic_tac_toe_ruby] git push origin origin:refs/heads/limelight
 Total 0 (delta 0), reused 0 (delta 0)
 To git@github.com:sl4m/tic_tic_toe_ruby.git
@@ -70,15 +70,15 @@ master
 remotes/origin/HEAD -> origin/master
 remotes/origin/limelight
 remotes/origin/master
-{% endhighlight %}
+</code></pre>
 
 This creates a local branch, tracks it with the newly created remote branch, and checks it out:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/tic_tac_toe_ruby] git checkout --track -b limelight origin/limelight
 Branch limelight set up to track remote branch limelight from origin.
 Switched to a new branch 'limelight'
-{% endhighlight %}
+</code></pre>
 
 Go have at it and start making changes to the new branch.  Once you're finished and you want to merge your changes in this branch to, let's say, master, you'll need to use *git merge*.
 
@@ -88,7 +88,7 @@ Go have at it and start making changes to the new branch.  Once you're finished 
 
 To merge a branch (limelight) to another (master), check out master and run *git merge*:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [limelight][~/local/git/tic_tac_toe_ruby] git checkout master
 Switched to branch 'master'
 [master][~/local/git/tic_tac_toe_ruby] git merge limelight
@@ -115,28 +115,28 @@ Fast-forward
  delete mode 100644 default_scene/players/combo_box.rb
  create mode 100644 spec/menu_item_spec.rb
  create mode 100644 spec/square_spec.rb
-{% endhighlight %}
+</code></pre>
 
 Now you should see the changes you made in the new branch in the branch you merged your changes.  In this case, I see the changes I made in limelight in master.
 
 Hold your horses, we're done yet.  If you run *git status*, you'll see the merge took place locally, but not on your remote branches (see your remote repo).
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/tic_tac_toe_ruby] git status
 # On branch master
 # Your branch is ahead of 'origin/master' by 4 commits.
 #
 nothing to commit (working directory clean)
-{% endhighlight %}
+</code></pre>
 
 If you notice above, it says "your branch is ahead of 'origin/master' by 4 commits".  If you've worked with git to where you committed multiple times, but not pushed your commits to your remote repo, you will see "your branch is ahead" message when running *git status*.  So we'll need to push the commits to the remote repo.
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/tic_tac_toe_ruby] git push origin master
 Total 0 (delta 0), reused 0 (delta 0)
 To git@github.com:sl4m/tic_tac_toe_ruby.git
    2083092..b7af83b  master -> master
-{% endhighlight %}
+</code></pre>
 
 Now you'll see the merged changes in your remote repo.
 
@@ -146,14 +146,14 @@ Finally, and optionally, you can delete your local branch if you don't need it a
 
 To delete your local branch:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/tic_tac_toe_ruby] git branch -d limelight
 Deleted branch limelight (was b7af83b).
-{% endhighlight %}
+</code></pre>
 
 To delete your remote branch:
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [master][~/local/git/tic_tac_toe_ruby] git push origin :limelight
 To git@github.com:sl4m/tic_tac_toe_ruby.git
  - [deleted]         limelight
@@ -162,13 +162,13 @@ To git@github.com:sl4m/tic_tac_toe_ruby.git
 [master][~/local/git/tic_tac_toe_ruby] git branch -r
   origin/HEAD -> origin/master
   origin/master
-{% endhighlight %}
+</code></pre>
 
 Make sure to be in a different branch than the one you're about to delete.  Otherwise, git will bark at you.
 
-{% highlight text %}
+<pre><code class="no-highlight">
 [limelight][~/local/git/tic_tac_toe_ruby] git branch -d limelight
 error: Cannot delete the branch 'limelight' which you are currently on.
-{% endhighlight %}
+</code></pre>
 
 Hope this helped.  I encourage you to start branching!
