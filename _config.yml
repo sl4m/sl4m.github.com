@@ -1,4 +1,4 @@
 permalink:  /:year/:month/:day/:title
 auto: false
 safe: false
-pygments: true
+pygments: false
