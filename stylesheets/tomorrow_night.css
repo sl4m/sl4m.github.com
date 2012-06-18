@@ -12,6 +12,7 @@ pre code {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   display: block;
+  font-family: "DroidSansMono";
   font-size: 13px;
   line-height: 1.25em;
   overflow: hidden;

@@ -1,6 +1,57 @@
+/*
+
+Title: screen.css
+
+Author: skim
+
+Contents:
+
+1. =R ESET
+2. =F ONTS
+3. =G LOBAL
+
+/* =F O N T S
+-------------------------------------------- */
+
+@font-face {
+  font-family: 'DroidSansRegular';
+  src: url('fonts/DroidSans-webfont.eot');
+  src: url('fonts/DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/DroidSans-webfont.woff') format('woff'),
+       url('fonts/DroidSans-webfont.ttf') format('truetype'),
+       url('fonts/DroidSans-webfont.svg#DroidSansRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DroidSansBold';
+  src: url('fonts/DroidSans-Bold-webfont.eot');
+  src: url('fonts/DroidSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/DroidSans-Bold-webfont.woff') format('woff'),
+       url('fonts/DroidSans-Bold-webfont.ttf') format('truetype'),
+       url('fonts/DroidSans-Bold-webfont.svg#DroidSansBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DroidSansMono';
+  src: url('fonts/DroidSansMono-webfont.eot');
+  src: url('fonts/DroidSansMono-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/DroidSansMono-webfont.woff') format('woff'),
+       url('fonts/DroidSansMono-webfont.ttf') format('truetype'),
+       url('fonts/DroidSansMono-webfont.svg#DroidSansMono') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =G L O B A L
+-------------------------------------------- */
+
 body {
   background: #FAF9F8;
-  font-family: "droid-sans-1","droid-sans-2", sans-serif;
+  font-family: "DroidSansRegular";
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
@@ -30,9 +81,7 @@ a:hover {
 }
 
 h1, h2, h3, h4 {
-  font-family: "droid-sans-1","droid-sans-2", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+  font-family: "DroidSansBold"
   line-height: 1em;
 }
 
