@@ -29,7 +29,7 @@ a:hover {
   color:#A5A5A5;
 }
 
-h1,h2,h3,h4 {
+h1, h2, h3, h4 {
   font-family: "droid-sans-1","droid-sans-2", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -107,7 +107,7 @@ h1 {
 }
 
 #post {
-  margin-bottom: 8em;
+  padding-bottom: 0.1em;
 }
 
 #post p {
@@ -146,6 +146,10 @@ h1 {
 
 #post a {
   padding: 0 3px;
+}
+
+.twitter {
+  padding-bottom: 2em;
 }
 
 em {
