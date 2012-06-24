@@ -119,7 +119,7 @@ class Proxy
     @messages = []
   end
 
-  def method_missing(method_name, *args, &block)
+  def method_missing(method_name, *args, &amp;block)
     @messages.push(method_name)
     @object.__send__(method_name, *args)
   end
