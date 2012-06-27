@@ -21,7 +21,25 @@
   {{ content }}
   <div class="related">
     <h3>all posts</h3>
-    <p>{% for post in site.posts %}<div>{{ post.date | date: "%b %d, %Y" }} &raquo; <a href="{{ post.url }}">{{ post.title }}</a></div>{% endfor %}</p>
+    <p>
+			<table>
+				<tbody>
+					{% for post in site.posts %}
+					<tr>
+						<td>
+							{{ post.date | date: "%b %d, %Y" }} 
+						</td>
+						<td>
+							&raquo;
+						</td>
+						<td>
+							<a href="{{ post.url }}">{{ post.title }}</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</p>
     <br />
   </div>
   {% include ga.html %}
