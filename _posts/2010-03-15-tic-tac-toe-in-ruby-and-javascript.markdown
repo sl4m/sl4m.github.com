@@ -11,7 +11,7 @@ categories:
   -- tdd
 ---
 
-*Note:* The latest Ruby source can be found [here](http://github.com/sl4m/tic_tac_toe_ruby) and JavaScript source [here](http://github.com/sl4m/tic_tac_toe_js)
+*Note:* The latest Ruby source can be found [here](http://github.com/sl4m/tic_tac_toe_ruby) and JavaScript source [here](https://github.com/sl4m/tic_tac_toe_nodejs)
 
 ## The Challenge
 
