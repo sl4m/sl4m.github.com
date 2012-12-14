@@ -99,4 +99,4 @@ Approximately 57.1% faster with phantomjs.
 
 As you can see, phantomjs is a dramatic improvement over the not-quite-true headless xvfb with Firefox.  Hopefully this convinces you to try out phantomjs whether you're coming from using xvfb or a head browser environment.  phantomjs is a welcoming addition to your development environment.
 
-If you're a heavy Capybara user, be on a lookout for the new [ghostdriver](https://github.com/detro/ghostdriver/) that is based on phantomjs.
+If you're a heavy Selenium user, be on a lookout for the new [ghostdriver](https://github.com/detro/ghostdriver/) that is based on phantomjs.
