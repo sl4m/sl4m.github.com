@@ -1,4 +1,3 @@
-permalink:  /:year/:month/:day/:title
-auto: true
-safe: false
-pygments: false
+permalink: /:year/:month/:day/:title
+pygments:  false
+safe:      false
