@@ -12,10 +12,13 @@ These are my initial observations between the two languages so far.
 ## nil and null
 
 *Ruby*
+
 <pre><code class="ruby">
 nil.is_a?(Object) # true
 </code></pre>
+
 *JavaScript*
+
 <pre><code class="javascript">
 typeof null === "object" // true
 </code></pre>
@@ -27,11 +30,14 @@ Unlike Ruby, *null* is not derived from a class (or object), but is a special va
 In Ruby, zero and empty strings are considered truthy values.
 
 *Ruby*
+
 <pre><code class="ruby">
 status = (nil) ? true : false   # status = false
 status = (false) ? true : false # status = false
 </code></pre>
+
 *JavaScript*
+
 <pre><code class="javascript">
 var status;
 status = (null) ? true : false;      // status = false
@@ -47,6 +53,7 @@ status = (undefined) ? true : false; // status = false
 Both Ruby and JavaScript use single and double quotes for creating strings.  You can also use single quotes in double quotes and vice versa without the need to escape them.  However, Ruby has some powerful flexible quoting features.
 
 *Ruby*
+
 <pre><code class="ruby">
 a = %(hello world)  # "hello world"
 b = %!hello world!  # "hello world"
@@ -61,6 +68,7 @@ world
 Ruby supports [heredocs](http://en.wikipedia.org/wiki/Here_document).
 
 *Ruby*
+
 <pre><code class="ruby">
 f = &lt;&lt;EOS
 hello
@@ -71,6 +79,7 @@ EOS
 Ruby uses the shovel operator to modify original strings.
 
 *Ruby*
+
 <pre><code class="ruby">
 string = "hello"
 new_string = string
@@ -81,12 +90,15 @@ string == "hello world" # true (modified original string)
 Ruby does not interpret escape characters when using single quotes (except itself).  JavaScript always interprets.
 
 *Ruby*
+
 <pre><code class="ruby">
 "\n".size   # 1
 '\n'.size   # 2
 '\''        # "'"
 </code></pre>
+
 *JavaScript*
+
 <pre><code class="javascript">
 "\n".length // 1
 '\n'.length // 1
@@ -96,6 +108,7 @@ Ruby does not interpret escape characters when using single quotes (except itsel
 Ruby has some other features.
 
 *Ruby*
+
 <pre><code class="ruby">
 number = 21
 string = "Your lucky number today is #{number}" # "Your lucky number today is 21"
@@ -109,6 +122,7 @@ string[5..9] # 'lucky'
 Ruby has some really cool shorthand methods.
 
 *Ruby*
+
 <pre><code class="ruby">
 array = []
 array &lt;&lt; 'a'            # shovel operator acts like JavaScript's push method
